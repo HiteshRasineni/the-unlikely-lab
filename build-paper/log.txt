@@ -1,0 +1,15 @@
+[paper] pandoc conversion complete
+[paper] --- validation report ---
+[paper] note: 1 raw TeX ref/cite commands remain inside math or pre blocks
+┌─────────────┬────────┐
+│ (index)     │ Values │
+├─────────────┼────────┤
+│ sections    │ 15     │
+│ subsections │ 25     │
+│ figures     │ 9      │
+│ tables      │ 17     │
+│ equations   │ 3      │
+│ citations   │ 30     │
+└─────────────┴────────┘
+[paper] OK: 15 sections, 9 figures, 17 tables, 3 numbered equations, 30 bibliography entries.
+[paper] article: C:\Users\rshit\OneDrive\Desktop\Unlikely Lab\.paper-build\mono-z\article.html

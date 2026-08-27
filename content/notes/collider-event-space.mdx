@@ -1,0 +1,54 @@
+---
+title: "Collider Events as Points in High-Dimensional Space"
+category: "Physics"
+date: "2026-08-20"
+tags:
+  - Collider Physics
+  - Machine Learning
+description: "Each collision event is a vector of observables. Density estimation over that feature space connects machine learning directly to physics."
+relatedResearch:
+  - slug: "mono-z"
+    title: "Mono-Z Dark Matter Search"
+  - slug: "dijet-anomaly"
+    title: "Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events"
+---
+
+## Events as Vectors
+
+Strip away the detectors, the reconstruction chains, and the physics language, and a collision event — after analysis — is a vector of numbers:
+
+$$
+\mathbf{x} = (p_T^{(1)}, \eta^{(1)}, \phi^{(1)}, \ldots,\; p_T^{(n)}, \eta^{(n)}, \phi^{(n)},\; E_T^{\text{miss}}, \; \ldots)
+$$
+
+transverse momenta, angles, invariant masses of reconstructed objects, missing transverse momentum. Ten, twenty, fifty components depending on the analysis. See [From Four-Vectors to Physical Observables](/notes/four-vectors) for where these entries come from.
+
+## Feature Space
+
+This vector defines a point in a **feature space**: one axis per observable, one point per recorded event. A dataset of millions of collisions is a cloud of points in this space, with structure inherited directly from the underlying physical processes:
+
+- Leptonic Z decays cluster near the Z boson mass shell.
+- QCD multijet production populates broad, strongly correlated regions.
+- Specific decay chains trace out characteristic manifolds.
+
+Feature engineering is nothing more than choosing coordinates for this space such that known physics appears geometrically. An invariant mass, for instance, becomes a radial-like coordinate whose bulk value reveals particle resonances.
+
+## Correlations
+
+The coordinates of real events are far from independent. Energy conservation correlates total momenta; decay kinematics correlate angles and masses; detector acceptance carves correlated boundaries into the accessible region. Any honest model of event distributions must capture this correlation structure — which is why methods limited to modeling each variable marginally, in isolation, discard most of the physics.
+
+## High-Dimensional Distributions
+
+Taken together, the cloud of points defines an empirical distribution in high-dimensional space. Density estimation [attempts to learn](/notes/density-estimation) that distribution: a function assigning plausible "bulk density" values to ordinary configurations, shaped by all correlations at once.
+
+This is where modern flow-based models earn their complexity. Their layered invertible transformations can warp a simple base distribution into shapes matching genuinely complicated, multimodal, correlated target densities.
+
+## Connection to Anomaly Detection
+
+Once a density $p(\mathbf{x})$ is learned over event space, anomaly detection becomes geometry:
+
+- Ordinary events live in high-density regions of the learned distribution.
+- Rare or unexpected processes — or artifacts — appear as outliers with low density.
+
+Ranking events by [likelihood-derived scores](/notes/anomaly-tails) therefore maps a statistical question ("what should ordinary look like?") onto a search strategy ("what doesn't look like it?"). The quality of the answer inherits directly from the fidelity of the learned density — hence the emphasis on careful density estimation before any talk of anomalies.
+

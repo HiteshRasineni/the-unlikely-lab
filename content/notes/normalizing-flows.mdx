@@ -1,0 +1,67 @@
+---
+title: "Normalizing Flows from First Principles"
+category: "Machine Learning"
+date: "2026-08-14"
+tags:
+  - Machine Learning
+  - Density Estimation
+description: "From the change-of-variables formula to normalizing flows: invertible transformations, Jacobian determinants, and exact likelihood evaluation."
+relatedResearch:
+  - slug: "mono-z"
+    title: "Mono-Z Dark Matter Search"
+  - slug: "dijet-anomaly"
+    title: "Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events"
+---
+
+## The Goal
+
+We want a model that does two things at once: generate or represent complex high-dimensional data, and evaluate the exact probability density of any given data point. Most generative models give you one or the other. Normalizing flows give both, using a simple mathematical identity.
+
+## Invertible Transformations
+
+Suppose $\mathbf{z}$ is drawn from a simple base distribution — typically a standard Gaussian — with known density $p_{\mathcal{Z}}$. Let $\mathbf{x} = f(\mathbf{z})$, where $f$ is an invertible (bijective) transformation with smooth inverse. Every point in $\mathbf{z}$-space corresponds to exactly one point in $\mathbf{x}$-space.
+
+This bijection lets us transport probabilities between spaces exactly.
+
+## Change of Variables and the Jacobian Determinant
+
+Under an invertible map, a small volume element transforms according to the determinant of the Jacobian matrix of the inverse map:
+
+$$
+p_{\mathcal{X}}(\mathbf{x}) = p_{\mathcal{Z}}(f^{-1}(\mathbf{x})) \left| \det \frac{\partial f^{-1}}{\partial \mathbf{x}} \right|
+$$
+
+The intuition in one dimension: if $x = f(z)$ stretches distances near some point by a factor $|f'(z)|$, then probability mass spreads thinner there by the same factor, so the density divides by it. In many dimensions, volumes distort anisotropically along different directions, and the single number capturing the net squeezing factor is $|\det J|$ — see [Jacobians and Change of Variables](/notes/jacobians).
+
+## Mapping a Simple Distribution to a Complex One
+
+A **normalizing flow** composes $K$ such invertible transformations:
+
+$$
+\mathbf{z}_0 \;\xrightarrow{\;f_1\;}\; \mathbf{z}_1 \;\xrightarrow{\;f_2\;}\; \cdots \;\xrightarrow{\;f_K\;}\; \mathbf{x}
+$$
+
+Each layer warps the distribution a little. Composed together, they can bend a standard Gaussian into an arbitrarily complicated target distribution, much like repeated small deformations knead dough into a complex shape.
+
+Densities compose too — determinants multiply:
+
+$$
+\log p_{\mathcal{X}}(\mathbf{x}) = \log p_{\mathcal{Z}}(\mathbf{z}_K) + \sum_{k=1}^{K} \log \left| \det \frac{\partial \mathbf{z}_{k-1}}{\partial \mathbf{z}_k} \right|
+$$
+
+where here the transformations run backwards through the sampling direction to normalize data back to the base space.
+
+## Likelihood Evaluation
+
+That last equation is the payoff. For any observed $\mathbf{x}$ we can compute its exact log-likelihood: push it through the inverse maps to obtain $\mathbf{z}_K$, evaluate the Gaussian density there, and add up the log-determinants. No approximations, no variational bound, no adversarial instability.
+
+Training maximizes total log-likelihood over the dataset, which makes flows directly aligned with the goal of density estimation itself.
+
+## Why Flows Are Useful for Density Estimation
+
+Three properties make flows well suited to physics problems like modeling collider event kinematics:
+
+1. **Exact likelihoods** — required for principled likelihood-based anomaly detection.
+2. **Exact inversion** — one can sample and also reason backward about which latent configurations produce given observations.
+3. **Expressiveness with structure** — architectures like autoregressive transforms impose physically sensible ordering while retaining full expressivity, as in [Neural Spline Flows](/notes/neural-spline-flows).
+

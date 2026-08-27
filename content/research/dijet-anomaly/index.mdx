@@ -1,0 +1,79 @@
+﻿---
+title: "Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events with Neural Spline Flows"
+description: "An unsupervised density-estimation approach to identifying anomalous structure in CMS dijet events using likelihood-based scoring."
+tags:
+  - CMS Open Data
+  - Dijet events
+  - Neural Spline Flows
+  - Unsupervised anomaly detection
+  - Likelihood-based scoring
+---
+
+## Overview
+
+This study applies unsupervised density estimation to CMS dijet events. A Neural Spline Flow is trained on the distribution of dijet event observables; each event is then assigned a likelihood-based anomaly score proportional to how unlikely it is under the learned density. The approach requires no labels and no reference signal model.
+
+## Physics Motivation
+
+Dijet events â€” two high-transverse-momentum hadronic jets recoiling against each other â€” are among the most abundant signatures in protonâ€“proton collisions, which makes them a natural and statistically powerful place to search for new phenomena that would appear as local excesses of unusual event structure. New particles decaying to quarks or gluons can manifest as resonances or as broad distortions of the jet kinematic distributions.
+
+Rather than specifying a particular signal hypothesis, this study asks a more general question: which observed events look least like the bulk of the data? Density estimation provides the formal answer through the likelihood.
+
+## Dataset
+
+The study uses CMS Open Data from the [CERN Open Data portal](https://opendata.cern.ch/). Real protonâ€“proton collision data form the core dataset; any Monte Carlo samples used for validation are labeled as Monte Carlo where relevant.
+
+## Event Representation
+
+Each event is represented by observables constructed from the reconstructed jets and overall event kinematics. The exact feature set is maintained alongside the analysis code and documented there; no feature list is asserted here beyond what has been established by the analysis itself.
+
+## Density Estimation
+
+The learned model estimates the probability density $p(\mathbf{x})$ over the event representation $\mathbf{x}$. See the notes on [density estimation](/notes/density-estimation), [normalizing flows](/notes/normalizing-flows), and [Neural Spline Flows](/notes/neural-spline-flows) for the technical background.
+
+```text
+Events
+   â†“
+Physical observables
+   â†“
+Learned probability density
+   â†“
+Likelihood / density score
+   â†“
+Identification of unusual events
+```
+
+## Neural Spline Flow
+
+The density model for this study uses the same Neural Spline Flow architecture family as the mono-Z analysis: a stack of identical transformation blocks built from masked piecewise rational quadratic autoregressive transforms with random permutations between blocks. The precise hyperparameters recorded for this study's training runs will be documented here once consolidated from the training configuration files. No unverified values are listed.
+
+## Anomaly Score
+
+Given a trained flow model, the log-likelihood $\log p(\mathbf{x})$ of each event is evaluated exactly, using the invertibility of the transformation and the tractable Jacobian determinant. Events with low probability under the learned density receive the highest anomaly scores:
+
+$$
+s(\mathbf{x}) = -\log p(\mathbf{x})
+$$
+
+Low-scoring events concentrate in the tails of the learned distribution, where rare or unexpected structure lives â€” but also where detector effects and mismodeling can live. See [Why Do Anomalies Live in the Tails?](/notes/anomaly-tails).
+
+## Analysis
+
+The pipeline consists of dataset acquisition and preprocessing, jet selection and observable construction, density-model training on data, evaluation of per-event scores, and inspection of the highest-scoring regions of phase space. Each stage is kept reproducible and connected to the code described on the [Code page](/code).
+
+## Results
+
+Results will be published on this page when produced by the actual analysis pipeline.
+
+## Publication
+
+No publication metadata exists yet for this study. This section supports adding title, authors, journal, DOI, preprint, and PDF information later without changing the page structure.
+
+## Code
+
+See the [Code overview page](/code). Direct repository links are added when available.
+
+## Reproducibility
+
+Reproducibility for this study rests on three elements: publicly released CMS collision data, an analysis pipeline whose stages are traceable end-to-end, and explicit labeling of any simulated inputs. When figures are published on this page, they will reference the pipeline outputs that generated them.
+

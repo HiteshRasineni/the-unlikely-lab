@@ -1,0 +1,37 @@
+{
+  "fit_b": {
+    "mu": 0.0,
+    "mu_err": null,
+    "theta_norm_mumu": -0.079773,
+    "theta_norm_ee": 0.0,
+    "theta_norm_mumu_err": 0.229666,
+    "theta_norm_ee_err": 0.23555,
+    "NLL": 329.150368,
+    "converged": 1
+  },
+  "fit_sb": {
+    "mu": 0.037826,
+    "mu_err": 0.003012,
+    "theta_norm_mumu": -0.778317,
+    "theta_norm_ee": -0.713492,
+    "theta_norm_mumu_err": 0.232602,
+    "theta_norm_ee_err": 0.237173,
+    "NLL": 150.313017,
+    "converged": 1
+  },
+  "q0": 357.674702,
+  "p0": 0.0,
+  "Z": 8.0,
+  "mu_hat": 0.037826,
+  "mu_err": 0.003012,
+  "mu_95_obs": 0.044276,
+  "mu_95_exp": 0.004087,
+  "band_1s": [
+    0.003354,
+    0.003734
+  ],
+  "band_2s": [
+    0.003221,
+    0.003928
+  ]
+}

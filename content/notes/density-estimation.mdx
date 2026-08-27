@@ -1,0 +1,63 @@
+---
+title: "What Is Density Estimation?"
+category: "Density Estimation"
+date: "2026-08-10"
+tags:
+  - Probability
+  - Density Estimation
+description: "Understanding probability density estimation and why learning a distribution can be useful for anomaly detection."
+relatedResearch:
+  - slug: "mono-z"
+    title: "Mono-Z Dark Matter Search"
+  - slug: "dijet-anomaly"
+    title: "Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events"
+---
+
+Density estimation is the problem of learning a probability distribution from data. Given a set of observations, we want a function that tells us how probable each new observation is — not just on average, but point by point across the entire space of possibilities.
+
+## Probability Distributions and Density Functions
+
+A probability distribution assigns probabilities to outcomes. When outcomes are continuous — such as the invariant mass of a reconstructed particle — we describe the distribution with a **probability density function** $p(x)$, where
+
+$$
+\int_a^b p(x)\,dx = P(a \le X \le b)
+$$
+
+and $p$ integrates to one over its whole support. The value $p(x)$ at a single point is not itself a probability; only integrals over regions are. This distinction matters constantly in physics analysis.
+
+For multivariate data — an event described by many observables simultaneously — the density becomes a function of many variables, $p(\mathbf{x}) = p(x_1, \dots, x_d)$, and correlations between variables are part of what must be learned.
+
+## Empirical Distributions
+
+Given $N$ samples, the simplest model of their distribution is the empirical distribution: assign each observation equal weight. This is exact but useless for generalization — between two observed points it says nothing, and outside the sampled region it says nothing at all. Any useful density estimate must interpolate and extrapolate sensibly.
+
+## Parametric versus Non-parametric
+
+**Parametric** methods assume a functional form with fixed complexity — a Gaussian, a Poisson, an exponential family — and estimate parameters:
+
+$$
+p(x \mid \theta) \quad \text{with } \theta \text{ estimated from data}
+$$
+
+These are efficient when the form is correct, and badly wrong when it is not. Real collider event distributions rarely obey any small family of forms.
+
+**Non-parametric** methods let the data determine the shape of the density: histograms, kernel density estimation, nearest-neighbor methods. They are more flexible but scale poorly as dimension grows.
+
+Between these two extremes sit modern machine-learning models — including normalizing flows — which use flexible parametric families (neural networks) that can approximate very general distributions.
+
+## Why High Dimensions Are Hard
+
+The difficulty of density estimation grows exponentially with dimension, a phenomenon related to the *curse of dimensionality*:
+
+- The volume of the space concentrates far from the origin; almost all of the space is empty.
+- Fixed numbers of samples become vanishingly sparse.
+- The number of histogram bins needed to cover the space explodes.
+
+A histogram of one observable might need tens of bins. A joint distribution over twenty observables needs astronomically many cells. This is exactly why learned, structured models — flows with inductive biases built into their architecture — matter for high-energy physics data.
+
+## Connection to Collider Event Data
+
+In collider physics, each collision event gives us a vector of measured quantities: momenta of leptons and jets, missing transverse momentum, invariant masses. A good density estimate over this event space means knowing *what ordinary events look like* — and once we know that, anything that lives where the density is low becomes interesting.
+
+This is the core logic connecting density estimation to anomaly detection: learn the expected, then look for the unexpected.
+

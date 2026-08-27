@@ -1,0 +1,246 @@
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+@theme {
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-neutral-900 antialiased;
+}
+
+a {
+  @apply underline underline-offset-2;
+}
+
+a:hover {
+  @apply text-neutral-600;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* MDX long-form content styling */
+.mdx {
+  @apply text-[17px] leading-7 text-neutral-800;
+}
+.mdx p {
+  @apply my-4 max-w-prose;
+}
+.mdx h2 {
+  @apply mt-10 mb-3 border-b border-neutral-200 pb-1 text-xl font-semibold text-black;
+}
+.mdx h3 {
+  @apply mt-7 mb-2 text-lg font-semibold text-black;
+}
+.mdx ul {
+  @apply my-4 list-disc pl-6;
+}
+.mdx ol {
+  @apply my-4 list-decimal pl-6;
+}
+.mdx li {
+  @apply my-1.5 max-w-prose;
+}
+.mdx blockquote {
+  @apply my-5 border-l-2 border-neutral-300 pl-4 text-neutral-700 italic;
+}
+.mdx code {
+  @apply rounded bg-neutral-100 px-1 py-0.5 font-mono text-[0.9em] text-neutral-800;
+}
+.mdx pre {
+  @apply my-5 overflow-x-auto border border-neutral-200 bg-neutral-50 p-4 font-mono text-sm leading-6;
+}
+.mdx pre code {
+  @apply bg-transparent p-0;
+}
+.mdx table {
+  @apply my-6 w-full max-w-full border-collapse text-left text-base overflow-x-auto block md:table;
+}
+.mdx th,
+.mdx td {
+  @apply border border-neutral-300 px-3 py-1.5 align-top;
+}
+.mdx th {
+  @apply bg-neutral-100 font-semibold;
+}
+.mdx a {
+  @apply break-words;
+}
+.mdx hr {
+  @apply my-8 border-neutral-200;
+}
+.mdx img {
+  @apply my-6 max-w-full h-auto border border-neutral-200;
+}
+.mdx .equation-display {
+  @apply my-6 overflow-x-auto;
+}
+.mdx strong {
+  @apply font-semibold text-black;
+}
+
+/* ============================================================
+   Paper (HTML scientific article) styling
+   ============================================================ */
+.paper-article {
+  @apply text-[16px] leading-7 text-neutral-800;
+}
+.paper-header .author-list {
+  @apply max-w-prose;
+}
+.paper-toc a {
+  @apply hover:text-black;
+}
+
+.paper-body p {
+  @apply my-4 max-w-prose;
+}
+.paper-body h2 {
+  @apply mt-10 mb-3 border-b border-neutral-200 pb-1 text-xl font-semibold text-black;
+}
+.paper-body h3 {
+  @apply mt-7 mb-2 text-lg font-semibold text-black;
+}
+.paper-body .sec-num {
+  @apply mr-1;
+}
+.paper-body ul {
+  @apply my-4 list-disc space-y-1 pl-6;
+}
+.paper-body ol {
+  @apply my-4 list-decimal space-y-1 pl-7;
+}
+.paper-body figure {
+  @apply my-8;
+}
+.paper-body figure img {
+  @apply my-2 inline-block h-auto max-w-full border border-neutral-200 align-middle;
+}
+.paper-body figure p {
+  @apply mx-auto my-0 max-w-none text-center;
+}
+.paper-body figcaption {
+  @apply mx-auto mt-3 max-w-prose border-l-2 border-neutral-200 pl-3 text-[14px] leading-6 text-neutral-600;
+}
+.paper-body figcaption .caption-label,
+.paper-body caption .caption-label {
+  @apply font-medium text-neutral-700 not-italic;
+}
+
+/* Tables: scroll horizontally instead of breaking the page */
+.paper-body .table-scroll {
+  @apply my-8 w-full overflow-x-auto;
+}
+.paper-body table {
+  @apply w-full max-w-full min-w-max border-collapse text-left text-[14px] leading-6;
+}
+.paper-body table td,
+.paper-body table th {
+  @apply border-b border-neutral-300 px-3 py-1.5 align-top;
+}
+.paper-body thead th {
+  @apply bg-neutral-100 font-medium;
+}
+.paper-body caption,
+.paper-body colgroup caption {
+  @apply -mb-3 pt-0 text-left text-[14px] text-neutral-600;
+}
+
+/* Equations: native MathML from pandoc; allow horizontal scrolling on mobile */
+.paper-body math[display="block"] {
+  display: block;
+  @apply my-6 overflow-x-auto py-1 pr-1 text-center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+.paper-body math {
+  font-size: 105%;
+}
+.paper-body .eq-anchor {
+  scroll-margin-top: 5rem;
+}
+.paper-body eq-anchor,
+.paper-body span.eq-anchor {
+  @apply block;
+}
+
+/* Citations & cross-references */
+.paper-body a.cite-link,
+.paper-body a.ref-link {
+  @apply no-underline underline-offset-2 decoration-neutral-400;
+}
+.paper-body a.cite-link:hover,
+.paper-body a.ref-link:hover {
+  @apply underline decoration-neutral-800;
+}
+.paper-body .citation {
+  @apply whitespace-nowrap text-[15px];
+}
+.paper-body sup.citation {
+  font-size: 85%;
+}
+
+/* References */
+.paper-body .reference-list {
+  @apply list-none pl-0 text-[15px] leading-6;
+}
+.paper-body .reference-list li {
+  @apply mb-3 pl-12 -indent-12;
+  padding-left: 3rem;
+}
+.paper-body .reference-list .ref-num {
+  @apply mr-1 font-medium text-neutral-700;
+}
+
+/* Footnote-like rules in the source rendered as paragraph notes */
+.paper-body pre,
+.paper-body code {
+  @apply rounded bg-neutral-50 px-1 py-0.5 font-mono text-[0.9em];
+}
+.paper-body pre code {
+  @apply p-0;
+}
+
+/* Stable anchor offset under sticky header */
+.paper-body [id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Print behavior */
+@media print {
+  body > header,
+  body > footer,
+  .paper-toc {
+    display: none !important;
+  }
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+  figure {
+    break-inside: avoid;
+  }
+  table {
+    break-inside: auto;
+  }
+}

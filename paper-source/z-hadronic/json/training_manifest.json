@@ -1,0 +1,95 @@
+{
+  "status": "flow_matching_background_model_trained",
+  "method": {
+    "name": "Conditional Flow Matching continuous normalizing flow",
+    "training_objective": "simulation-free straight-line vector-field regression between Gaussian noise and data",
+    "density_evaluation": "ODE solve with hutchinson divergence trace/estimator; slower than NSF closed-form density at inference",
+    "early_stopping": "validation NLL from ODE density, not training loss"
+  },
+  "inputs": {
+    "background_root": "/kaggle/input/datasets/eternalsorcerer/cms-2015d-htmht-hadronic-z-feature-extraction/CMS2015D-HTMHT-HadronicZ.root",
+    "signal_manifest": "/kaggle/input/notebooks/eternalsorcerer/dm-hadronic-z-signal-generation/dm_hadronicz_signal_generation/outputs/final_signal_manifest.json",
+    "signal_roots": {
+      "axial_mx10_mv20": "/kaggle/input/notebooks/eternalsorcerer/dm-hadronic-z-signal-generation/dm_hadronicz_signal_generation/outputs/dm_hadronicz_axial_mx10_mv20_features.root",
+      "axial_mx50_mv200": "/kaggle/input/notebooks/eternalsorcerer/dm-hadronic-z-signal-generation/dm_hadronicz_signal_generation/outputs/dm_hadronicz_axial_mx50_mv200_features.root",
+      "vector_mx1_mv500": "/kaggle/input/notebooks/eternalsorcerer/dm-hadronic-z-signal-generation/dm_hadronicz_signal_generation/outputs/dm_hadronicz_vector_mx1_mv500_features.root"
+    }
+  },
+  "outputs": {
+    "checkpoint": "/kaggle/working/htmht_hadronicz_flow_matching/checkpoints/best_flow_matching_background.pt",
+    "preprocess": "/kaggle/working/htmht_hadronicz_flow_matching/preprocess.json",
+    "feature_contract": "/kaggle/working/htmht_hadronicz_flow_matching/feature_contract.json",
+    "training_history": "/kaggle/working/htmht_hadronicz_flow_matching/training_history.csv",
+    "validation_nll_curve": "/kaggle/working/htmht_hadronicz_flow_matching/plots/validation_nll_curve.png",
+    "closure_plot_dir": "/kaggle/working/htmht_hadronicz_flow_matching/plots",
+    "signal_comparison_note": "/kaggle/working/htmht_hadronicz_flow_matching/signal_comparison_note.json",
+    "train_split_indices": "/kaggle/working/htmht_hadronicz_flow_matching/splits/train_idx.npy",
+    "validation_split_indices": "/kaggle/working/htmht_hadronicz_flow_matching/splits/val_idx.npy"
+  },
+  "best_epoch": 245,
+  "best_validation_nll": -64.96817016601562,
+  "features": [
+    "met_pt",
+    "met_phi",
+    "min_dphi_met_jets",
+    "dphi_met_jet1",
+    "dphi_met_jet2",
+    "met_over_sqrtHT",
+    "hadronic_recoil_pt",
+    "m_jj",
+    "pt_Z",
+    "eta_Z_pseudo",
+    "phi_Z",
+    "dphi_met_Z",
+    "met_over_ptZ",
+    "abs_met_minus_ptZ",
+    "abs_mjj_minus_mZ",
+    "u_parallel",
+    "u_perp",
+    "u_parallel_over_ptZ",
+    "u_perp_over_ptZ",
+    "zjet1_pt",
+    "zjet1_eta",
+    "zjet2_pt",
+    "zjet2_eta",
+    "deltaR_zjj",
+    "deltaphi_zjj",
+    "n_jets",
+    "n_extra_jets",
+    "jet1_pt",
+    "jet1_eta",
+    "jet2_pt",
+    "jet2_eta",
+    "HT"
+  ],
+  "excluded_features": [
+    "btag_pass",
+    "btag_wp_medium",
+    "max_btag_csvv2",
+    "n_bjets",
+    "n_vertices",
+    "rho",
+    "source_entry",
+    "source_file_idx",
+    "trigger_pass"
+  ],
+  "nan_sentinel_features": [
+    "jet2_eta",
+    "dphi_met_jet2",
+    "dphi_met_jet1",
+    "jet1_eta"
+  ],
+  "nan_sentinel_value": -999.0,
+  "drop_extra_jet_features": false,
+  "train_fraction": 0.8,
+  "background_rows_used": 1439523,
+  "background_rows_total": 1439523,
+  "background_rows_train": 1151618,
+  "background_rows_validation": 287905,
+  "known_limitations": [
+    "Feature closure should be inspected visually; low validation NLL alone is not sufficient.",
+    "ODE density scoring uses hutchinson divergence with rk4 integration and is computationally slower than NSF evaluation.",
+    "b-tag discriminator and pileup-condition mismatch columns are excluded from training features.",
+    "Early stopping triggered based on validation NLL patience; the final checkpoint is a converged minimum under the configured patience window."
+  ]
+}

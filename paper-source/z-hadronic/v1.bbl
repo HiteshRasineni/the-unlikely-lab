@@ -1,0 +1,233 @@
+\begin{thebibliography}{10}
+
+\bibitem{abercrombie_dm_forum}
+D.~Abercrombie et~al.
+\newblock {Dark Matter Benchmark Models for Early LHC Run-2 Searches: Report of
+  the ATLAS/CMS Dark Matter Forum}.
+\newblock {\em Phys. Dark Univ.}, 27:100371, 2020.
+\newblock
+  \href{https://doi.org/10.1016/j.dark.2019.100371}{doi:10.1016/j.dark.2019.100371}.
+
+\bibitem{backovic_schannel}
+Mihailo Backovic, Michael Kramer, Fabio Maltoni, Antony Martini, Kentarou
+  Mawatari, and Mathieu Pellen.
+\newblock {Higher-order QCD predictions for dark matter production at the LHC
+  in simplified models with s-channel mediators}.
+\newblock {\em Eur. Phys. J. C}, 75(10):482, 2015.
+\newblock
+  \href{https://doi.org/10.1140/epjc/s10052-015-3700-6}{doi:10.1140/epjc/s10052-015-3700-6}.
+
+\bibitem{neubert_monoz}
+Matthias Neubert, Jian Wang, and Cen Zhang.
+\newblock {Higher-order QCD predictions for dark matter production in mono-Z
+  searches at the LHC}.
+\newblock {\em JHEP}, 02:082, 2016.
+\newblock
+  \href{https://doi.org/10.1007/JHEP02(2016)082}{doi:10.1007/JHEP02(2016)082}.
+
+\bibitem{rasineni_nsf_monoz}
+Hitesh Rasineni and Bhavishya Chebrolu.
+\newblock {Mono-Z Dark Matter Search with Neural Spline Flows Using CMS Run
+  2015D Open Data}, 2026.
+\newblock
+  \href{https://doi.org/10.48550/arXiv.2607.13771}{doi:10.48550/arXiv.2607.13771}.
+
+\bibitem{durkan_nsf}
+Conor Durkan, Artur Bekasov, Iain Murray, and George Papamakarios.
+\newblock {Neural Spline Flows}.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  volume~32, 2019.
+\newblock
+  \href{https://doi.org/10.48550/arXiv.1906.04032}{doi:10.48550/arXiv.1906.04032}.
+
+\bibitem{papamakarios_flows}
+George Papamakarios, Eric Nalisnick, Danilo~Jimenez Rezende, Shakir Mohamed,
+  and Balaji Lakshminarayanan.
+\newblock {Normalizing Flows for Probabilistic Modeling and Inference}.
+\newblock {\em J. Mach. Learn. Res.}, 22(57):1--64, 2021.
+\newblock
+  \href{https://doi.org/10.48550/arXiv.1912.02762}{doi:10.48550/arXiv.1912.02762}.
+
+\bibitem{lipman_flow_matching}
+Yaron Lipman, Ricky T.~Q. Chen, Heli Ben-Hamu, Maximilian Nickel, and Matt Le.
+\newblock {Flow Matching for Generative Modeling}.
+\newblock {\em International Conference on Learning Representations}, 2023.
+\newblock
+  \href{https://doi.org/10.48550/arXiv.2210.02747}{doi:10.48550/arXiv.2210.02747}.
+
+\bibitem{chen_neural_ode}
+Ricky T.~Q. Chen, Yulia Rubanova, Jesse Bettencourt, and David~K. Duvenaud.
+\newblock {Neural Ordinary Differential Equations}.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  volume~31, 2018.
+\newblock
+  \href{https://doi.org/10.48550/arXiv.1806.07366}{doi:10.48550/arXiv.1806.07366}.
+
+\bibitem{grathwohl_ffjord}
+Will Grathwohl, Ricky T.~Q. Chen, Jesse Bettencourt, Ilya Sutskever, and David
+  Duvenaud.
+\newblock {FFJORD: Free-form Continuous Dynamics for Scalable Reversible
+  Generative Models}.
+\newblock In {\em International Conference on Learning Representations}, 2019.
+\newblock
+  \href{https://doi.org/10.48550/arXiv.1810.01367}{doi:10.48550/arXiv.1810.01367}.
+
+\bibitem{cowan_asymptotic}
+Glen Cowan, Kyle Cranmer, Eilam Gross, and Ofer Vitells.
+\newblock {Asymptotic formulae for likelihood-based tests of new physics}.
+\newblock {\em Eur. Phys. J. C}, 71:1554, 2011.
+\newblock
+  \href{https://doi.org/10.1140/epjc/s10052-011-1554-0}{doi:10.1140/epjc/s10052-011-1554-0}.
+
+\bibitem{cms_htmht_2015d}
+{CMS Collaboration}.
+\newblock {HTMHT primary dataset in MINIAOD format from RunD of 2015
+  (/HTMHT/Run2015D-16Dec2015-v1/MINIAOD)}, 2021.
+\newblock
+  \href{https://doi.org/10.7483/OPENDATA.CMS.SRUP.MHPK}{doi:10.7483/OPENDATA.CMS.SRUP.MHPK}.
+
+\bibitem{cms_data_policy}
+{CMS Collaboration}.
+\newblock {CMS data preservation, re-use and open access policy}.
+\newblock CMS Document 6032-v3, 2020.
+\newblock
+  \href{https://cms-docdb.cern.ch/cgi-bin/PublicDocDB/ShowDocument?docid=6032}{CMS
+  document 6032-v3}.
+
+\bibitem{cms_lumi_guide}
+{CMS Open Data}.
+\newblock {Luminosity}.
+\newblock CMS Open Data Guide, 2026.
+\newblock \href{https://cms-opendata-guide.web.cern.ch/analysis/lumi/}{CMS Open
+  Data luminosity guide}.
+
+\bibitem{lassila_cms_opendata}
+Kati Lassila-Perini et~al.
+\newblock {Using CMS Open Data in research --- challenges and directions},
+  2021.
+\newblock
+  \href{https://doi.org/10.48550/arXiv.2106.05726}{doi:10.48550/arXiv.2106.05726}.
+
+\bibitem{bellis_cms_dp}
+Matthew Bellis and Thomas McCauley.
+\newblock {CMS Data Preservation and Open Access: status and plans}.
+\newblock {\em Data Preservation in High Energy Physics: Global Report}, 2026.
+\newblock
+  \href{https://doi.org/10.48550/arXiv.2607.06775}{doi:10.48550/arXiv.2607.06775}.
+
+\bibitem{alwall_mg5amc}
+J.~Alwall, R.~Frederix, S.~Frixione, V.~Hirschi, F.~Maltoni, O.~Mattelaer,
+  H.-S. Shao, T.~Stelzer, P.~Torrielli, and M.~Zaro.
+\newblock {The automated computation of tree-level and next-to-leading order
+  differential cross sections, and their matching to parton shower
+  simulations}.
+\newblock {\em JHEP}, 07:079, 2014.
+\newblock
+  \href{https://doi.org/10.1007/JHEP07(2014)079}{doi:10.1007/JHEP07(2014)079}.
+
+\bibitem{sjostrand_pythia82}
+Torbjorn Sjostrand, Stefan Ask, Jesper~R. Christiansen, Richard Corke, Nishita
+  Desai, Philip Ilten, Stephen Mrenna, Stefan Prestel, Christine~O. Rasmussen,
+  and Peter~Z. Skands.
+\newblock {An introduction to PYTHIA 8.2}.
+\newblock {\em Comput. Phys. Commun.}, 191:159--177, 2015.
+\newblock
+  \href{https://doi.org/10.1016/j.cpc.2015.01.024}{doi:10.1016/j.cpc.2015.01.024}.
+
+\bibitem{delphes3}
+J.~de~Favereau, C.~Delaere, P.~Demin, A.~Giammanco, V.~Lema{\^i}tre,
+  A.~Mertens, and M.~Selvaggi.
+\newblock {DELPHES 3, A modular framework for fast simulation of a generic
+  collider experiment}.
+\newblock {\em JHEP}, 02:057, 2014.
+\newblock
+  \href{https://doi.org/10.1007/JHEP02(2014)057}{doi:10.1007/JHEP02(2014)057}.
+
+\bibitem{cacciari_antikt}
+Matteo Cacciari, Gavin~P. Salam, and Gregory Soyez.
+\newblock {The anti-k(t) jet clustering algorithm}.
+\newblock {\em JHEP}, 04:063, 2008.
+\newblock
+  \href{https://doi.org/10.1088/1126-6708/2008/04/063}{doi:10.1088/1126-6708/2008/04/063}.
+
+\bibitem{kraml_spin2}
+Sabine Kraml, Ulrich Laa, Kentarou Mawatari, and Kenta Yamashita.
+\newblock {Simplified dark matter models with a spin-2 mediator at the LHC}.
+\newblock {\em Eur. Phys. J. C}, 77(5):326, 2017.
+\newblock
+  \href{https://doi.org/10.1140/epjc/s10052-017-4871-0}{doi:10.1140/epjc/s10052-017-4871-0}.
+
+\bibitem{lhc_dm_wg_heavy}
+{LHC Dark Matter Working Group}.
+\newblock {Comparing LHC searches for heavy mediators of dark matter production
+  in visible and invisible decay channels}, 2017.
+\newblock
+  \href{https://doi.org/10.48550/arXiv.1703.05703}{doi:10.48550/arXiv.1703.05703}.
+
+\bibitem{bell_busoni_scalar}
+Nicole~F. Bell, Giorgio Busoni, and Isaac~W. Sanderson.
+\newblock {Self-consistent Dark Matter Simplified Models with an s-channel
+  scalar mediator}.
+\newblock {\em JCAP}, 03:015, 2017.
+\newblock
+  \href{https://doi.org/10.1088/1475-7516/2017/03/015}{doi:10.1088/1475-7516/2017/03/015}.
+
+\bibitem{cacciari_fastjet}
+Matteo Cacciari, Gavin~P. Salam, and Gregory Soyez.
+\newblock {FastJet User Manual}.
+\newblock {\em Eur. Phys. J. C}, 72:1896, 2012.
+\newblock
+  \href{https://doi.org/10.1140/epjc/s10052-012-1896-2}{doi:10.1140/epjc/s10052-012-1896-2}.
+
+\bibitem{nnpdf3}
+Richard~D. Ball et~al.
+\newblock {Parton distributions for the LHC Run II}.
+\newblock {\em JHEP}, 04:040, 2015.
+\newblock
+  \href{https://doi.org/10.1007/JHEP04(2015)040}{doi:10.1007/JHEP04(2015)040}.
+
+\bibitem{planck2018_vi}
+N.~Aghanim et~al.
+\newblock {Planck 2018 results. VI. Cosmological parameters}.
+\newblock {\em Astron. Astrophys.}, 641:A6, 2020.
+\newblock
+  \href{https://doi.org/10.1051/0004-6361/201833910}{doi:10.1051/0004-6361/201833910}.
+
+\bibitem{dinh_realnvp}
+Laurent Dinh, Jascha Sohl-Dickstein, and Samy Bengio.
+\newblock {Density estimation using Real NVP}.
+\newblock In {\em International Conference on Learning Representations}, 2017.
+\newblock
+  \href{https://doi.org/10.48550/arXiv.1605.08803}{doi:10.48550/arXiv.1605.08803}.
+
+\bibitem{kingma_glow}
+Durk~P. Kingma and Prafulla Dhariwal.
+\newblock {Glow: Generative Flow with Invertible 1x1 Convolutions}.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  volume~31, 2018.
+\newblock
+  \href{https://doi.org/10.48550/arXiv.1807.03039}{doi:10.48550/arXiv.1807.03039}.
+
+\bibitem{nachman_shih_anode}
+Benjamin Nachman and David Shih.
+\newblock {Anomaly Detection with Density Estimation}.
+\newblock {\em Phys. Rev. D}, 101:075042, 2020.
+\newblock
+  \href{https://doi.org/10.1103/PhysRevD.101.075042}{doi:10.1103/PhysRevD.101.075042}.
+
+\bibitem{hallin_cathode}
+Anna Hallin, Gregor Kasieczka, Sabine Kraml, Andre Lessa, and David Shih.
+\newblock {Classifying anomalies through outer density estimation}.
+\newblock {\em Phys. Rev. D}, 106:055006, 2022.
+\newblock
+  \href{https://doi.org/10.1103/PhysRevD.106.055006}{doi:10.1103/PhysRevD.106.055006}.
+
+\bibitem{metodiev_cwola}
+Eric~M. Metodiev, Benjamin Nachman, and Jesse Thaler.
+\newblock {Classification without labels: Learning from mixed samples in high
+  energy physics}.
+\newblock {\em JHEP}, 10:174, 2017.
+\newblock
+  \href{https://doi.org/10.1007/JHEP10(2017)174}{doi:10.1007/JHEP10(2017)174}.
+
+\end{thebibliography}

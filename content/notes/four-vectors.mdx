@@ -1,0 +1,81 @@
+---
+title: "From Four-Vectors to Physical Observables"
+category: "Physics"
+date: "2026-08-22"
+tags:
+  - Collider Physics
+  - Kinematics
+description: "Four-momentum, transverse momentum, pseudorapidity, azimuthal angle, invariant mass, and missing transverse momentum."
+relatedResearch:
+  - slug: "z-hadronic"
+    title: "Z Boson Hadronic Decay Analysis"
+  - slug: "mono-z"
+    title: "Mono-Z Dark Matter Search"
+---
+
+## Four-Momentum
+
+In special relativity, a particle's energy and momentum combine into a single object, the four-momentum:
+
+$$
+p^\mu = (E,\; p_x,\; p_y,\; p_z)
+$$
+
+It satisfies the mass-shell relation
+
+$$
+p^\mu p_\mu = E^2 - |\mathbf{p}|^2 = m^2 c^4 \quad \Rightarrow \quad m^2 = E^2 - |\mathbf{p}|^2
+$$
+
+with $m$ the invariant rest mass. Every measured particle in a collider event carries one of these objects. Everything else on this page is derived from four-vectors.
+
+Collider experiments work in the center-of-mass frame of colliding partons, where longitudinal boosts are poorly known but transverse quantities are robust. This motivates the coordinate choices below.
+
+## Transverse Momentum
+
+The component of momentum perpendicular to the beam axis (taken as the $z$-axis) is
+
+$$
+p_T = \sqrt{p_x^2 + p_y^2}
+$$
+
+Because beam collisions involve unknown parton-parton longitudinal motion, $p_T$ is conserved in every event — everything produced must balance in the transverse plane. This conservation law is what makes the next quantity meaningful.
+
+## Pseudorapidity
+
+Rather than polar angle $\theta$ from the beam axis, collider physics uses pseudorapidity:
+
+$$
+\eta = -\ln\tan\frac{\theta}{2}
+$$
+
+Pseudorapidity maps the sphere of directions onto a linear-ish axis: particles traveling nearly parallel to the beam have large $|\eta|$, while perpendicular emission sits near $\eta = 0$. For relativistic particles it approximates rapidity, under which particle production is roughly uniform — and detector geometry itself is conveniently described in $\eta$, since cylindrical detector components cover fixed pseudorapidity ranges.
+
+## Azimuthal Angle
+
+The angle $\phi$ around the beam axis completes directional coverage together with $\eta$. For relativistic particles, particle pairs are approximately back-to-back in azimuth when they originate from a common heavy decay.
+
+## Invariant Mass
+
+Given reconstructed four-momenta of several objects, their invariant mass is
+
+$$
+m_{ij}^2 = \left(p_i^\mu + p_j^\mu\right)^2 = (E_i + E_j)^2 - |\mathbf{p}_i + \mathbf{p}_j|^2
+$$
+
+Generalized to arbitrary sets of final-state particles, this quantity is Lorentz-invariant: every observer agrees on its value regardless of boost. Resonance reconstruction lives here — hadronic Z-boson studies [exactly like this](/research/z-hadronic) reconstruct the Z through the invariant mass of its decay products.
+
+## Missing Transverse Momentum
+
+Transverse momentum conservation requires that all visible reconstructed objects balance to zero net transverse momentum:
+
+$$
+\mathbf{p}_T^{\text{miss}} = -\sum_{i} \mathbf{p}_{T,i}^{\text{visible}}
+$$
+
+If this sum is measurably nonzero, something invisible escaped: neutrinos, or — more speculatively — dark-sector particles. Large $\mathbf{p}_T^{\text{miss}}$ alongside a well-reconstructed Z boson is precisely the mono-Z signature studied at [the corresponding research page](/research/mono-z).
+
+## Building Event Observables
+
+From these primitives an analysis constructs higher-level features: invariant masses of candidate combinations, angular separations such as $\Delta R = \sqrt{(\Delta\eta)^2 + (\Delta\phi)^2}$ between objects, scalar sums of transverse momenta, significance-like ratios involving $\mathbf{p}_T^{\text{miss}}$. Each is chosen because known physics distinguishes signal from background along that direction. These vectors become [points in feature space](/notes/collider-event-space), where density estimation takes over.
+

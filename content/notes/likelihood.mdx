@@ -1,0 +1,55 @@
+---
+title: "Likelihood Is Not Probability"
+category: "Statistics"
+date: "2026-08-18"
+tags:
+  - Statistics
+  - Inference
+description: "Probability, probability density, and likelihood are distinct concepts. Confusing them causes real problems in statistical analysis."
+relatedResearch:
+  - slug: "mono-z"
+    title: "Mono-Z Dark Matter Search"
+---
+
+It looks like the same formula. It behaves like something entirely different.
+
+## Probability
+
+Probability describes how plausible *data* is, given a fixed model. For a discrete random variable,
+
+$$
+P(X = x) \ge 0, \qquad \sum_x P(X=x) = 1
+$$
+
+Probabilities over the possible outcomes sum — or integrate, for continuous variables — to one. Probability is a function of the *outcome*, holding the model fixed.
+
+## Probability Density
+
+For a continuous variable there is no probability at a point, only a density $p(x)$: a function whose integral over any region gives the probability that the outcome lands in that region. Densities can exceed one; only their integrals are probabilities. This alone breaks many naive intuitions about what "$p(x)$" means numerically.
+
+## Likelihood
+
+The likelihood turns this around. It asks: given that we observed particular data $\mathbf{x}$, how well do different model parameters $\theta$ explain it?
+
+$$
+L(\theta) = p(\mathbf{x} \mid \theta)
+$$
+
+The right-hand side has exactly the same functional form as probability or density — that is why the confusion persists. But as a function it now treats $\mathbf{x}$ as *fixed* and varies $\theta$.
+
+Crucially, likelihoods are not normalized over $\theta$. Nothing forces $\int L(\theta)\,d\theta = 1$; often the integral does not even exist. Comparing likelihood values is meaningful, reading them as absolute probabilities is not.
+
+## Why the Distinction Matters
+
+This is not pedantry. The distinction changes what you can legitimately conclude:
+
+1. **Scales of likelihood differ.** In high-dimensional continuous problems, log-likelihood values can be large negative numbers determined mostly by dimensional volume factors — irrelevant constants when comparing models but misleading if read as "how likely the event is."
+
+2. **Relative statements only.** A likelihood supports statements like "parameter value $\theta_1$ explains the data better than $\theta_2$" via ratios. It does not support "the probability of $\theta$ is 0.03" without additional Bayesian machinery and priors.
+
+3. **Model comparison requires care.** Likelihoods from models with different functional forms or different numbers of parameters cannot be compared naively.
+
+4. **Likelihood-based anomaly detection.** When an event receives a low density score under a learned background model, the number is a density — tied to the specific feature space and normalization chosen. What it licenses is a ranking of events within that space, not an absolute statement about how "rare" reality has become. Cross-checks against independent quantities remain necessary.
+
+See also [Why Do Anomalies Live in the Tails?](/notes/anomaly-tails) for how these scores behave in practice.
+

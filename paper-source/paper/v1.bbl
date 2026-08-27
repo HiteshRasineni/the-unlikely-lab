@@ -1,0 +1,191 @@
+\begin{thebibliography}{10}
+
+\bibitem{Durkan2019}
+Conor Durkan, Artur Bekasov, Iain Murray, and George Papamakarios.
+\newblock Neural spline flows.
+\newblock {\em Advances in Neural Information Processing Systems}, 32, 2019.
+
+\bibitem{Papamakarios2021}
+George Papamakarios, Eric Nalisnick, Danilo~Jimenez Rezende, Shakir Mohamed,
+  and Balaji Lakshminarayanan.
+\newblock Normalizing flows for probabilistic modeling and inference.
+\newblock {\em J. Mach. Learn. Res.}, 22:1--64, 2021.
+
+\bibitem{Goodman2011}
+Jessica Goodman, Masahiro Ibe, Arvind Rajaraman, William Shepherd, Tim M.~P.
+  Tait, and Hai-Bo Yu.
+\newblock Constraints on dark matter from colliders.
+\newblock {\em Phys. Rev. D}, 82:116010, 2010.
+
+\bibitem{Bell2012}
+Nicole~F. Bell, Ahmad~J. Galea, James~B. Dent, Thomas~D. Jacques, Lawrence~M.
+  Krauss, and Thomas~J. Weiler.
+\newblock Searching for dark matter at the {LHC} with a mono-{Z}.
+\newblock {\em Phys. Rev. D}, 86:096011, 2012.
+
+\bibitem{Carpenter2013}
+Linda~M. Carpenter, Andrew Nelson, Chase Shimmin, Tim M.~P. Tait, and Daniel
+  Whiteson.
+\newblock Collider searches for dark matter in events with a {Z} boson and
+  missing energy.
+\newblock {\em Phys. Rev. D}, 87:074005, 2013.
+
+\bibitem{DMForum2015}
+{ATLAS and CMS Collaborations}.
+\newblock Dark matter benchmark models for early {LHC} run-2 searches: Report
+  of the {ATLAS/CMS} dark matter forum.
+\newblock {\em arXiv preprint}, 2015.
+\newblock Editors: Antonio Boveia and Caterina Doglioni.
+
+\bibitem{Alves2015}
+Alexandre Alves and Kuver Sinha.
+\newblock Searches for dark matter at the {LHC}: A multivariate analysis in the
+  mono-{Z} channel.
+\newblock {\em Phys. Rev. D}, 92:115005, 2015.
+
+\bibitem{CMS2017MonoZ}
+{CMS Collaboration}.
+\newblock Search for new physics in events with a leptonically decaying {Z}
+  boson and a large transverse momentum imbalance in proton--proton collisions
+  at $\sqrt{s}=13$~{TeV}.
+\newblock {\em Phys. Rev. D}, 97:092005, 2018.
+
+\bibitem{CMS2021MonoZ}
+{CMS Collaboration}.
+\newblock Search for dark matter produced in association with a leptonically
+  decaying {Z} boson in proton--proton collisions at $\sqrt{s}=13$~{TeV}.
+\newblock {\em Eur. Phys. J. C}, 81:13, 2021.
+
+\bibitem{Autran2015}
+Marcelo Autran, Kevin Bauer, Tongyan Lin, and Daniel Whiteson.
+\newblock mono-{Z}$'$: searches for dark matter in events with a resonance and
+  missing transverse energy.
+\newblock {\em Phys. Rev. D}, 92:115014, 2015.
+
+\bibitem{Altmannshofer2015}
+Wolfgang Altmannshofer, Patrick~J. Fox, Roni Harnik, Graham~D. Kribs, and
+  Nirmal Raj.
+\newblock Dark matter signals in dilepton production at hadron colliders.
+\newblock {\em Phys. Rev. D}, 91:015005, 2015.
+
+\bibitem{Yang2017}
+Daneng Yang and Qiang Li.
+\newblock Probing the dark sector through mono-{Z} boson leptonic decays.
+\newblock {\em Phys. Rev. D}, 97:015022, 2018.
+
+\bibitem{Elgammal2024}
+S.~Elgammal.
+\newblock Angular distribution study for high mass dimuon pairs in {CMS} open
+  2012 data and for mono-{Z}$'$ model.
+\newblock {\em arXiv preprint}, 2024.
+
+\bibitem{Reyes2022}
+Humberto Reyes-Gonz{\'a}lez and Riccardo Torre.
+\newblock Testing the boundaries: Normalizing flows for higher dimensional data
+  sets.
+\newblock {\em SciPost Phys.}, 13:047, 2022.
+
+\bibitem{Verheyen2022}
+Rob Verheyen.
+\newblock Event generation and density estimation with surjective normalizing
+  flows.
+\newblock {\em SciPost Phys.}, 13:047, 2022.
+\newblock See arXiv:2205.01697 for publication details.
+
+\bibitem{Andreassen2020}
+Anders Andreassen, Benjamin Nachman, and David Shih.
+\newblock Simulation assisted likelihood-free anomaly detection.
+\newblock {\em Phys. Rev. D}, 101:055004, 2020.
+
+\bibitem{CERNOpenDataDoubleMuon}
+{CMS Collaboration}.
+\newblock {DoubleMuon primary dataset in MINIAOD format from RunD of 2015
+  (/DoubleMuon/Run2015D-16Dec2015-v1/MINIAOD)}.
+\newblock CERN Open Data Portal, Record 24127, 2021.
+\newblock DOI: 10.7483/OPENDATA.CMS.H3TX.ZJZX.
+
+\bibitem{CERNOpenDataDoubleEG}
+{CMS Collaboration}.
+\newblock {DoubleEG primary dataset in MINIAOD format from RunD of 2015
+  (/DoubleEG/Run2015D-08Jun2016-v1/MINIAOD)}.
+\newblock CERN Open Data Portal, Record 24132, 2021.
+\newblock DOI: 10.7483/OPENDATA.CMS.6ULE.YZJW.
+
+\bibitem{CERNOpenDataMonoZVector}
+{CMS Collaboration}.
+\newblock {Simulated dataset
+  DarkMatter\_MonoZToLL\_V\_Mx-1\_Mv-500\_gDMgQ-1\_TuneCUETP8M1\_13TeV-madgraph
+  in MINIAODSIM format for 2015 collision data}.
+\newblock CERN Open Data Portal, Record 16630, 2021.
+\newblock DOI: 10.7483/OPENDATA.CMS.YTLH.E0N7.
+
+\bibitem{CERNOpenDataMonoZAxialMx10Mv20}
+{CMS Collaboration}.
+\newblock {Simulated dataset
+  DarkMatter\_MonoZToLL\_A\_Mx-10\_Mv-20\_gDMgQ-1\_TuneCUETP8M1\_13TeV-madgraph
+  in MINIAODSIM format for 2015 collision data}.
+\newblock CERN Open Data Portal, Record 16575, 2021.
+\newblock DOI: 10.7483/OPENDATA.CMS.YB3Q.XTXY.
+
+\bibitem{CERNOpenDataMonoZAxialMx50Mv200}
+{CMS Collaboration}.
+\newblock {Simulated dataset
+  DarkMatter\_MonoZToLL\_A\_Mx-50\_Mv-200\_gDMgQ-1\_TuneCUETP8M1\_13TeV-madgraph
+  in MINIAODSIM format for 2015 collision data}.
+\newblock CERN Open Data Portal, Record 16597, 2021.
+\newblock DOI: 10.7483/OPENDATA.CMS.34IE.KN6I.
+
+\bibitem{CERNOpenDataMonoZScalar}
+{CMS Collaboration}.
+\newblock {Simulated dataset
+  DarkMatter\_MonoZToLL\_EWK\_Scalar\_Mx-100\_Lambda-3000\_TuneCUETP8M1\_13TeV-madgraph
+  in MINIAODSIM format for 2015 collision data}.
+\newblock CERN Open Data Portal, Record 16601, 2021.
+\newblock DOI: 10.7483/OPENDATA.CMS.NW7F.NFGG.
+
+\bibitem{Cowan2011}
+Glen Cowan, Kyle Cranmer, Eilam Gross, and Ofer Vitells.
+\newblock Asymptotic formulae for likelihood-based tests of new physics.
+\newblock {\em Eur. Phys. J. C}, 71:1554, 2011.
+
+\bibitem{Berlin2015}
+Asher Berlin, Stefania Gori, Tongyan Lin, and Lian-Tao Wang.
+\newblock Pseudoscalar portal dark matter.
+\newblock {\em Phys. Rev. D}, 92:015005, 2015.
+
+\bibitem{Liew2017}
+Seng~Pei Liew, Michele Papucci, Alessandro Vichi, and Kathryn~M. Zurek.
+\newblock Mono-{X} versus direct searches: Simplified models for dark matter at
+  the {LHC}.
+\newblock {\em JHEP}, 03:100, 2017.
+
+\bibitem{ATLAS2016Dilepton}
+{ATLAS Collaboration}.
+\newblock Search for high-mass new phenomena in the dilepton final state using
+  proton--proton collisions at $\sqrt{s}=13$~{TeV} with the {ATLAS} detector.
+\newblock {\em Phys. Lett. B}, 761:372--392, 2016.
+
+\bibitem{ATLAS2017Dilepton}
+{ATLAS Collaboration}.
+\newblock Search for new high-mass phenomena in the dilepton final state using
+  36~{fb}$^{-1}$ of proton--proton collision data at $\sqrt{s}=13$~{TeV} with
+  the {ATLAS} detector.
+\newblock {\em Phys. Lett. B}, 776:318--338, 2018.
+
+\bibitem{Nachman2020}
+Benjamin Nachman and David Shih.
+\newblock Anomaly detection with density estimation.
+\newblock {\em Phys.\ Rev.\ D}, 101:075042, 2020.
+
+\bibitem{Hallin2021}
+Anna Hallin et~al.
+\newblock Classifying anomalies through outer density estimation.
+\newblock {\em Phys.\ Rev.\ D}, 106:055006, 2022.
+
+\bibitem{CMS-LUM-2021}
+{CMS Collaboration}.
+\newblock Precision luminosity measurement in proton-proton collisions at
+  $\sqrt{s}=13\,\mathrm{TeV}$ in 2015 and 2016 at cms.
+\newblock {\em Eur.\ Phys.\ J.\ C}, 81:800, 2021.
+
+\end{thebibliography}

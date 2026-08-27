@@ -1,0 +1,69 @@
+---
+title: "Hadronic Mono-Z Dark Matter Sensitivity with Flow Matching on CMS Open Data"
+description: "A projected sensitivity study for hadronic mono-Z dark-matter production using conditional flow-matching continuous normalizing flows on CMS Run 2015D Open Data."
+tags:
+  - CMS Open Data
+  - Run 2015D
+  - Hadronic decay
+  - Flow matching
+  - Continuous Normalizing Flows
+  - Dark matter
+publication:
+  title: "Hadronic Mono-Z Dark Matter Sensitivity with Flow Matching on CMS Open Data"
+  authors:
+    - "Hitesh Rasineni"
+    - "Chebrolu Bhavishya"
+  journal: "Research Square preprint"
+  doi: "10.21203/rs.3.rs-10634384/v1"
+  preprint: "https://doi.org/10.21203/rs.3.rs-10634384/v1"
+  pdf: "/research/z-hadronic/assets/paper.pdf"
+---
+
+## Overview
+
+This study presents a projected sensitivity study for hadronic mono-$Z$ dark-matter production ($pp \to Z\bar{\chi}\chi$ with $Z \to jj$) using CMS Run 2015D HTMHT open data corresponding to $2.256382381~\mathrm{fb}^{-1}$, from which 1,439,523 events satisfy the hadronic mono-$Z$ selection.
+
+Backgrounds are modelled with a conditional flow-matching continuous normalizing flow (CFM-CNF) trained on the selected HTMHT events and evaluated on a held-out validation split reweighted to the full selected population.
+
+## Physics Motivation
+
+Collider experiments offer a complementary route to direct and indirect dark matter detection. In the mono-$Z$ topology, a $Z$ boson is produced in association with a pair of stable DM particles escaping undetected as missing transverse momentum ($\MET$):
+
+- The hadronic decay channel $Z \rightarrow q\bar{q}$ benefits from a substantially larger branching fraction ($\sim 70\%$) compared to leptonic decay channels.
+- Multijet background modeling in this channel is challenging, making continuous-time density estimation particularly advantageous.
+- Extra-jet topology carries substantial discriminating power between mono-$Z$ dark-matter production and generic multijet QCD/electroweak backgrounds.
+
+## Dataset
+
+Events are drawn from the CMS Run 2015D HTMHT MINIAOD open dataset ($2.256382381~\mathrm{fb}^{-1}$). Selected events satisfy at least two jets with $p_T > 30~\mathrm{GeV}$ and $|\eta| < 2.4$, dijet mass $70 < m_{jj} < 110~\mathrm{GeV}$, $\Delta R_{jj} < 2.0$, and a $b$-tag veto on extra jets.
+
+Simulated dark matter signal samples are generated with MadGraph5 + Pythia8 + Delphes using the `DMsimp_s_spin1` simplified model for axial-vector and vector mediators.
+
+## Density Estimation & Flow Matching
+
+The background density is modelled with a continuous normalizing flow parameterized by a learned velocity field $v_\theta(\mathbf{z}(t), t)$ trained with the simulation-free conditional flow matching objective:
+
+```text
+Target Data Point (x₁) ──┐
+                         ├──► Velocity Path Regression ──► Probability-Flow ODE
+Base Gaussian (x₀)     ──┘
+```
+
+Per-event negative log-likelihoods (NLL) obtained via Hutchinson trace estimation along the probability-flow ODE serve as the one-sided discriminant.
+
+## Key Results
+
+Under the baseline analysis, the projected discovery sensitivities evaluated with the Asimov formula ($B \geq 20$ floor) are:
+
+- **Axial benchmark** ($m_\chi=10~\mathrm{GeV}$, $M_{\mathrm{med}}=20~\mathrm{GeV}$): $2.89\sigma$ expected significance.
+- **Axial benchmark** ($m_\chi=50~\mathrm{GeV}$, $M_{\mathrm{med}}=200~\mathrm{GeV}$): $7.62\sigma$ expected significance.
+- **Vector benchmark** ($m_\chi=1~\mathrm{GeV}$, $M_{\mathrm{med}}=500~\mathrm{GeV}$): $7.41\sigma$ expected significance.
+
+An ablation study removing extra-jet kinematic features reduces expected significance by 53–71%, confirming the critical role of extra-jet topology in the hadronic channel.
+
+## Publication
+
+- **Preprint**: [rs.3.rs-10634384/v1](https://doi.org/10.21203/rs.3.rs-10634384/v1) (`doi:10.21203/rs.3.rs-10634384/v1`) — Research Square
+- **Full HTML Article**: Available at [/research/z-hadronic/paper](/research/z-hadronic/paper)
+- **PDF**: [Download PDF](/research/z-hadronic/assets/paper.pdf)
+

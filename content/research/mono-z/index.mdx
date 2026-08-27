@@ -1,0 +1,115 @@
+---
+title: "Mono-Z Dark Matter Search with Neural Spline Flows Using CMS Run 2015D Open Data"
+description: "A likelihood-based study of mono-Z event kinematics using Neural Spline Flows and CMS Run 2015D Open Data, with separate studies of the electron and muon channels."
+tags:
+  - CMS Open Data
+  - Run 2015D
+  - Electron and muon channels
+  - Neural Spline Flows
+  - Density estimation
+  - Dark matter
+publication:
+  title: "Mono-Z Dark Matter Search with Neural Spline Flows Using CMS Run 2015D Open Data"
+  authors:
+    - "Hitesh Rasineni"
+    - "Chebrolu Bhavishya"
+  journal: "arXiv preprint"
+  doi: "10.48550/arXiv.2607.13771"
+  preprint: "https://doi.org/10.48550/arXiv.2607.13771"
+  pdf: "/research/mono-z/assets/paper.pdf"
+---
+
+## Overview
+
+This study investigates the kinematic structure of mono-Z events â€” protonâ€“proton collision events in which a Z boson is reconstructed together with significant missing transverse momentum â€” using density estimation applied to CMS Run 2015D Open Data. A Neural Spline Flow learns a probability density over event observables; deviations from that learned density provide a data-driven way to identify regions of phase space where observed events become unlikely.
+
+The electron and muon channels are treated as separate studies, reflecting the different detector signatures and reconstruction performance associated with each lepton flavor.
+
+## Physics Motivation
+
+In dark-matter searches at colliders, a common strategy is to produce dark-sector particles in association with a visible object that provides an experimentally clean trigger and reconstruction signature. Mono-Z events are one such signature:
+
+- The Z boson is identified through its decays to charged leptons â€” particularly $Z \rightarrow e^+ e^-$ and $Z \rightarrow \mu^+ \mu^-$ â€” providing a well-measured, low-background tag.
+- If invisible particles are produced in association with the Z boson, they escape the detector undetected and appear as missing transverse momentum, computed from the negative vector sum of the transverse momenta of all visible objects.
+- Modeling the Standard Model background in this region requires a good understanding of the multivariate distribution of event kinematics.
+
+Density estimation offers a complementary, data-driven approach: instead of relying entirely on simulated templates, the expected distribution of ordinary events is learned directly from collision data.
+
+## Dataset
+
+Collision data released through the CERN Open Data portal by the CMS collaboration form the basis of this study. The Standard Model component uses CMS Run 2015D Open Data. Where Monte Carlo samples are used as comparisons or signal references, they are explicitly labeled as Monte Carlo rather than being mixed with real collision data.
+
+For details on the CMS Open Data program, see the [CERN Open Data portal](https://opendata.cern.ch/).
+
+## Event Representation
+
+Each event is represented by a vector of physical observables derived from the reconstructed physics objects â€” leptons, jets, and missing transverse momentum. These features are constructed from standard collider quantities such as transverse momentum, pseudorapidity, azimuthal angle, invariant mass, and missing transverse momentum.
+
+The exact list of event-level features used for training is maintained with the analysis code and will be documented here when finalized.
+
+## Density Estimation
+
+The analysis treats the set of measured event observables as draws from an unknown multivariate probability density. Learning that density makes it possible to assign every observed event a likelihood-based score.
+
+```text
+Events
+   â†“
+Physical observables
+   â†“
+Learned probability density
+   â†“
+Likelihood / density score
+   â†“
+Identification of unusual events
+```
+
+Related notes on this site cover [density estimation](/notes/density-estimation), [normalizing flows](/notes/normalizing-flows), and why [anomalies live in the tails](/notes/anomaly-tails) of a distribution.
+
+## Neural Spline Flow
+
+The density model is a Neural Spline Flow. The currently documented configuration:
+
+- Stack of ten identical transformation blocks.
+- Random permutation layers between transformation blocks.
+- Masked piecewise rational quadratic autoregressive transforms.
+- Autoregressive network with 256 hidden units.
+- 8 spline bins with linear tails.
+- Adam optimizer with learning rate 1e-4.
+
+No other hyperparameters are reported here until they are recorded from the actual training runs.
+
+## Analysis
+
+The analysis pipeline proceeds from raw CMS Open Data records through event selection in both lepton channels, construction of event observables, density-model training and evaluation, and finally likelihood-based scoring of events against the trained model. Details of each stage are kept alongside the analysis code so that the full chain remains traceable.
+
+## Results
+
+Results will be published on this page when corresponding real figures and numerical outputs are produced by the analysis pipeline.
+
+## Statistical Analysis
+
+The statistical interpretation follows a profile-likelihood approach. Known components include:
+
+- Poisson likelihood for the counting process.
+- Gaussian nuisance-parameter constraints.
+- Normalization nuisance parameters.
+- Non-negative signal-strength parameter.
+- Likelihood-ratio test statistic.
+- CLs scan.
+
+See also [Likelihood Is Not Probability](/notes/likelihood) for how the statistical language used here is defined precisely.
+
+## Publication
+
+- **Preprint**: [arXiv:2607.13771](https://doi.org/10.48550/arXiv.2607.13771) (`doi:10.48550/arXiv.2607.13771`)
+- **Full HTML Article**: Available at [/research/mono-z/paper](/research/mono-z/paper)
+- **PDF**: [Download PDF](/research/mono-z/assets/paper.pdf)
+
+## Code
+
+Code availability for this study is described on the [Code overview page](/code). Direct links are added when repositories are made public.
+
+## Data
+
+- CMS Open Data is available through the [CERN Open Data portal](https://opendata.cern.ch/).
+

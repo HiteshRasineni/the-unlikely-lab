@@ -1,0 +1,66 @@
+---
+title: "Neural Spline Flows"
+category: "Machine Learning"
+date: "2026-08-16"
+tags:
+  - Machine Learning
+  - Normalizing Flows
+description: "Rational quadratic splines, monotonicity, invertibility, and autoregressive conditioning in Neural Spline Flows."
+relatedResearch:
+  - slug: "mono-z"
+    title: "Mono-Z Dark Matter Search"
+  - slug: "dijet-anomaly"
+    title: "Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events"
+---
+
+Normalizing flows are only as good as their elementary transformations. The transformation inside each layer must be expressive, invertible, and cheap to differentiate. **Neural Spline Flows** achieve all three by constructing each layer's transformation as a piecewise rational quadratic spline.
+
+## Spline Transformations
+
+A spline is a curve assembled from polynomial pieces glued smoothly at fixed points, called knots. Instead of asking a neural network to output an entire nonlinear function directly — which is hard to keep invertible — the network outputs the *parameters of a spline*: the knot positions and the derivatives at each knot. The transformation itself is then evaluated by simple algebra on those parameters.
+
+## Rational Quadratic Splines
+
+Early spline flows used sum-of-squares quadratic splines with relatively heavy computation per evaluation. Rational quadratic splines replace the polynomial form with a ratio of quadratics:
+
+$$
+g(u) = \frac{a(u)}{b(u)}, \qquad \text{with } a, b \text{ quadratic polynomials}
+$$
+
+defined on each interval between consecutive knots. Using ratios instead of sums keeps everything expressible with similar cost to affine transformations while providing smooth, closed-form inverse functions and derivatives.
+
+## Monotonicity and Invertibility
+
+Invertibility requires the transformation to be strictly monotonic on its domain: strictly increasing (or decreasing) so that each input maps to exactly one output and back again. The rational quadratic form achieves this through constraints on its parameters:
+
+- Knots are ordered along both axes.
+- Derivatives at each interior knot are constrained to be positive.
+- Each segment is constructed to stay positive on its interval.
+
+Under these conditions every piece is strictly increasing, so the whole function is invertible, with an explicit closed-form inverse rather than a numerical one.
+
+## Autoregressive Conditioning
+
+So far, we have described transforming *one scalar*. For multivariate densities, transformation parameters must depend on the other variables in a way that preserves tractable Jacobians.
+
+**Autoregressive conditioning** transforms each dimension $x_i$ using parameters computed from the preceding dimensions $x_{1}, \dots, x_{i-1}$:
+
+$$
+z_i = f_i(x_i;\; x_1, \dots, x_{i-1})
+$$
+
+Because $f_i$ acts elementwise on $x_i$, the Jacobian is triangular. Triangular matrices have determinants equal to the product of diagonal entries, so computing $|\det J|$ reduces to multiplying per-dimension factors — no matrix determinant computation needed. Masked networks implement this conditioning efficiently: the same trick used in masked autoencoder architectures lets a single network pass produce all conditional parameters simultaneously.
+
+Variable ordering matters here — early dimensions influence later ones but not vice versa. Random permutations between blocks ensure that information flows through different orderings across layers.
+
+## Why Splines Can Represent Complex Distributions
+
+The combination is powerful because the flexibility lives where it counts:
+
+- **Local adaptivity**: separate spline segments allow different behavior in different regions — sharp peaks in dense regions, smooth long tails elsewhere.
+- **Controllable precision**: increasing the number of bins refines resolution exactly where the data demands it.
+- **Exact likelihoods via triangular Jacobians**, maintained by construction.
+- **Stable training**: parameter constraints guarantee validity for any network output, so gradients never push the model into invalid configurations.
+
+For collider physics data — multimodal, correlated, and spanning several orders of magnitude in scale — this local adaptivity is precisely what simpler coupling or affine layers lack.
+

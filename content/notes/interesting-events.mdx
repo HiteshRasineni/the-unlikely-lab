@@ -1,0 +1,52 @@
+---
+title: "What Makes an Event Interesting?"
+category: "Research Notes"
+date: "2026-08-26"
+tags:
+  - Research Notes
+  - Anomaly Detection
+  - Statistics
+description: "A conceptual distinction between the different kinds of 'unusual' an event can be — and why only some of them matter for new physics."
+relatedResearch:
+  - slug: "dijet-anomaly"
+    title: "Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events"
+---
+
+In an unsupervised analysis, "unusual" is a ranking, not a verdict. Once events are scored, several entirely different reasons explain why a given event lands at the top of the list — and distinguishing between them is where actual research begins.
+
+## Statistically Unusual
+
+An event is statistically unusual when it has low probability under a model of ordinary data — a [learned density](/notes/density-estimation), a template, a control-sample expectation. This is the narrowest and best-defined notion of unusual, but it depends entirely on which model produced the score, which features were included, and how they were preprocessed. Change any of these and the ranking changes.
+
+## Detector-Unusual
+
+A detector-unusual event got that way through hardware behavior: dead or noisy channels, transient electronics faults, miscalibrated regions of readout. These events may look like nothing else in the dataset because they genuinely are artifacts of the measuring instrument, not of nature.
+
+## Reconstruction-Unusual
+
+Reconstruction-unusual events fail downstream of detection: jet clustering merged two objects into one, an object was misidentified or assigned to the wrong vertex, the missing transverse momentum picked up spurious energy. The detector saw something ordinary; the algorithm produced something strange from it.
+
+## Background-Model-Unusual
+
+Background-model-unusual events expose failures of our *modeling* rather than anything exotic in the data. If the learned density underestimates the probability of some perfectly ordinary region — under-represented configurations, edge effects near selection boundaries, features whose tails were never fully seen during training — events there score as anomalous purely due to mismodeling.
+
+## Physically Anomalous
+
+Only physically anomalous events trace back to processes not accounted for by known physics: dark-sector production, unexpected resonances, unmodeled interactions. Everything on the list above mimics this category's signature — low likelihood — while carrying no new physics at all.
+
+## Why the Distinction Matters
+
+The workflow implied by this taxonomy runs one direction:
+
+```text
+Statistically unusual
+   → eliminate detector-unusual
+   → eliminate reconstruction-unusual
+   → eliminate background-model-unusual
+   → what remains becomes candidates for physical novelty
+```
+
+Each elimination stage requires different evidence: commissioning data and stability studies against detector effects; validation of object reconstruction; closure tests and alternative models against mismodeling. A likelihood-based anomaly search that stops after step zero — scoring — has only completed the easiest and least conclusive part.
+
+The honest framing is therefore this: anomaly detection does not find new physics. It produces an ordered list of places to look carefully, ordered by how much they resist explanation by everything we already understand.
+

@@ -1,0 +1,5 @@
+Error at "build-paper\body.tex" (line 1469, column 2):
+unexpected end of input
+expecting \end{table*}
+\bibliography{references}
+ ^

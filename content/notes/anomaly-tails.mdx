@@ -1,0 +1,43 @@
+---
+title: "Why Do Anomalies Live in the Tails?"
+category: "Statistics"
+date: "2026-08-12"
+tags:
+  - Statistics
+  - Anomaly Detection
+description: "Why low probability can identify unusual observations — and why low likelihood does not automatically imply new physics."
+relatedResearch:
+  - slug: "dijet-anomaly"
+    title: "Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events"
+---
+
+## High-Density and Low-Density Regions
+
+If we have a model of the ordinary — a probability density $p(\mathbf{x})$ over our data space — then that model partitions the space implicitly. Regions where $p(\mathbf{x})$ is large are where most events concentrate: the bulk of the distribution. Regions where $p(\mathbf{x})$ is small are the **tails**: configurations that occur rarely, if ever, under the modeled process.
+
+## Rare Events
+
+Rare events live in the tails by definition. If a physical process produces events whose observables differ systematically from the dominant Standard Model background, those events will have low probability under a density estimated from background-dominated data. This is the operating principle of likelihood-based anomaly detection:
+
+$$
+s(\mathbf{x}) = -\log p(\mathbf{x})
+$$
+
+A large score means the model considers the event unlikely. Rank events by score, and the tail becomes a search region.
+
+## Why Low Probability Does Not Automatically Imply New Physics
+
+Here is the critical asymmetry of the method: a low-density observation has several possible explanations, only some of them interesting.
+
+> An unusual event is not automatically an anomalous physical process. Detector effects, reconstruction issues, statistical fluctuations, mismodeling, and selection effects can all produce low-density observations.
+
+Specifically:
+
+1. **Detector effects** — dead channels, miscalibration, noisy readout — can push measured values away from their true ones.
+2. **Reconstruction issues** — jet clustering failures, incorrect assignment of objects to vertices, misidentified particles.
+3. **Statistical fluctuations** — even perfectly modeled distributions produce extreme observations occasionally; tails are populated by construction.
+4. **Mismodeling** — if the learned density underestimates the probability of certain ordinary configurations, ordinary events will appear anomalous. In practice this is often the largest source of false positives.
+5. **Selection effects** — the way events enter the dataset shapes its density; artifacts of selection can mimic anomaly structure.
+
+An unusual event is therefore only a *candidate* for something interesting. Turning candidates into evidence requires cross-checks: control regions, alternative feature sets, detector-level validation, and ultimately agreement across independent datasets. Likelihood-based scoring narrows the search — it does not close it alone.
+

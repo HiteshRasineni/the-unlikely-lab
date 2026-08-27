@@ -1,0 +1,65 @@
+---
+title: "Jacobians and Change of Variables"
+category: "Mathematics"
+date: "2026-08-24"
+tags:
+  - Mathematics
+  - Normalizing Flows
+description: "The mathematical foundation behind normalizing flows: how Jacobian determinants transport probability densities between coordinate systems."
+relatedResearch:
+  - slug: "mono-z"
+    title: "Mono-Z Dark Matter Search"
+---
+
+## Why Densities Change Under Transformations
+
+Probability *mass* is physical; probability *density* is not. When we stretch, squeeze, or bend the space a distribution lives on, probability is conserved — but density must adjust to compensate for how volumes themselves distort. The Jacobian determinant is precisely the bookkeeping device for that adjustment.
+
+## One-Dimensional Intuition
+
+Let $z$ have density $p_z$ and define $x = f(z)$ with $f$ invertible and differentiable. Mass in a small interval transforms as
+
+$$
+p_x(x)\,|dx| = p_z(z)\,|dz|
+$$
+
+Since $dx = f'(z)\,dz$, dividing both sides gives
+
+$$
+p_x(x) = \frac{p_z(z)}{|f'(z)|}, \qquad z = f^{-1}(x)
+$$
+
+The intuition: where $f'(z)$ is large, small intervals of $z$ get stretched into wide intervals of $x$, so the same probability mass spreads thinner and the density drops. Inverse stretching compresses mass and raises density. This single derivative — this one-dimensional Jacobian — already contains the whole idea.
+
+## Multivariate Change of Variables
+
+In $d$ dimensions, a transformation $\mathbf{x} = f(\mathbf{z})$ distorts volume differently along different directions. The linear approximation near any point is given by the Jacobian matrix:
+
+$$
+J = \frac{\partial f}{\partial \mathbf{z}}, \qquad J_{ij} = \frac{\partial f_i}{\partial z_j}
+$$
+
+A small cube of side $\epsilon$ around $\mathbf{z}$ maps under $f$ into a tiny parallelepiped whose $d$-dimensional volume equals $\epsilon^d \,|\det J|$. The determinant therefore measures net local volume distortion, accounting for rotation, shear, and scaling along every axis simultaneously.
+
+Substituting into the conservation statement yields:
+
+$$
+p_{\mathcal{X}}(\mathbf{x}) = p_{\mathcal{Z}}\!\left(f^{-1}(\mathbf{x})\right) \left| \det \frac{\partial f^{-1}}{\partial \mathbf{x}} \right|
+$$
+
+## Two Useful Properties
+
+**Chain rule structure under composition.** For composed maps $f = f_K \circ \cdots \circ f_1$,
+
+$$
+\det J_f = \prod_k \det J_{f_k}
+$$
+
+so log-determinants simply add across layers — this is why stacked flows remain exactly tractable.
+
+**Triangularity makes determinants cheap.** If $J$ is triangular, $\det J$ is just the product of its diagonal entries. Autoregressive transformations are constructed to produce exactly this [structure](/notes/neural-spline-flows), reducing an expensive $O(d^3)$ determinant computation to $d$ scalar multiplications.
+
+## Role in Normalizing Flows
+
+A normalizing flow is nothing more than change of variables applied iteratively, with each layer chosen so that its Jacobian determinant stays computable while the composite map grows expressive enough to model real data — like the distributions over [collider event observables](/notes/collider-event-space) studied at this lab.
+

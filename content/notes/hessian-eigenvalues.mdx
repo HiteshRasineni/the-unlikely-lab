@@ -1,0 +1,80 @@
+---
+title: "Gradients, Hessians, Eigenvalues and Machine Learning"
+category: "Mathematics"
+date: "2026-08-26"
+tags:
+  - Mathematics
+  - Machine Learning
+description: "Gradients, Hessians, eigenvectors and eigenvalues — the differential geometry behind optimization and loss landscapes."
+relatedResearch:
+  - slug: "mono-z"
+    title: "Mono-Z Dark Matter Search"
+---
+
+Training a machine-learning model means descending a loss surface. The tools that describe that surface are classical multivariable calculus and linear algebra.
+
+## The Gradient
+
+For a scalar loss function $\mathcal{L}(\theta)$ over parameters $\theta \in \mathbb{R}^d$, the gradient collects all partial derivatives:
+
+$$
+\nabla_\theta \mathcal{L} = \left( \frac{\partial \mathcal{L}}{\partial \theta_1}, \ldots, \frac{\partial \mathcal{L}}{\partial \theta_d} \right)
+$$
+
+It points in the direction of steepest *increase*; gradients therefore flow *downhill* by stepping against it:
+
+$$
+\theta_{t+1} = \theta_t - \eta\, \nabla_\theta \mathcal{L}(\theta_t)
+$$
+
+with learning rate $\eta$. Backpropagation is simply an efficient algorithm for computing $\nabla_\theta \mathcal{L}$ through deep compositions.
+
+## The Hessian
+
+Whereas the gradient gives slope, the Hessian gives curvature — the matrix of second derivatives:
+
+$$
+H_{ij} = \frac{\partial^2 \mathcal{L}}{\partial \theta_i \,\partial \theta_j}
+$$
+
+Locally, a second-order Taylor expansion describes the landscape as
+
+$$
+\mathcal{L}(\theta + \delta) \approx \mathcal{L}(\theta) + \nabla \mathcal{L}^\top \delta + \tfrac{1}{2}\, \delta^\top H\, \delta
+$$
+
+## Eigenvectors and Eigenvalues
+
+The spectral decomposition of a symmetric matrix is
+
+$$
+H v_i = \lambda_i v_i
+$$
+
+Eigenvectors $v_i$ identify independent directions of curvature; eigenvalues $\lambda_i$ measure how strongly the surface bends along each one. Their signs carry direct geometric meaning:
+
+- All $\lambda_i > 0$: locally convex — a bowl-like minimum.
+- All $\lambda_i < 0$: locally concave — a maximum.
+- Mixed signs: a saddle point.
+- Some $\lambda_i \approx 0$: nearly flat directions, where the loss barely responds to motion.
+
+In high dimensions these spectra are informative about training dynamics. Loss surfaces of large networks tend to be dominated numerically by flat directions punctuated by a few strong ones — a fact tied to why large models train surprisingly well despite enormous non-convexity.
+
+## Curvature and Optimization
+
+Curvature connects directly to optimizers' behavior:
+
+- **Step-size limits.** Along direction $v$ with eigenvalue $\lambda > 0$, gradient descent diverges if $\eta > 2/\lambda$. Curvature sets the maximum safe learning rate — one reason extreme curvature (vanishing or exploding gradients) destabilizes training.
+- **Ill-conditioning.** A wide spread between largest and smallest positive eigenvalues forces compromises: steps small enough for stiff directions become painfully slow along flat ones. This condition-number problem motivates adaptive per-parameter methods such as Adam.
+- **Flat minima and generalization.** Empirically, solutions reached in flatter basins often generalize better than those in sharp ravines; sharpness along more directions tends to correlate with sensitivity to perturbations.
+
+## Representation Learning Connection
+
+Curvature ideas reach beyond optimization:
+
+- The same eigendecomposition appears in second-order methods, Gauss–Newton approximations, and trust-region steps used to stabilize flow-model training.
+- Principal component analysis finds eigenvectors of data covariance matrices: principal directions of variance, interpretable as the most descriptive axes of a dataset's feature space.
+- Spectral properties of learned representations — conditioning, effective rank, spread of singular values — shape how information flows through deep architectures, including autoregressive networks inside flows.
+
+See also [Jacobians and Change of Variables](/notes/jacobians) for the other matrix quantity central to [flow-based density estimation](/notes/normalizing-flows).
+

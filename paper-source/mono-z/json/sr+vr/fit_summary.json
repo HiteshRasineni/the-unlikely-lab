@@ -1,0 +1,113 @@
+{
+  "vector": {
+    "fit_b": {
+      "mu": 0.0,
+      "mu_err": null,
+      "theta_norm_mumu": -0.60622,
+      "theta_norm_ee": -0.203721,
+      "theta_norm_mumu_err": 0.163544,
+      "theta_norm_ee_err": 0.169106,
+      "NLL": 430.301216,
+      "converged": 1
+    },
+    "fit_sb": {
+      "mu": 0.030828,
+      "mu_err": 0.002448,
+      "theta_norm_mumu": -1.137322,
+      "theta_norm_ee": -0.775454,
+      "theta_norm_mumu_err": 0.166832,
+      "theta_norm_ee_err": 0.172084,
+      "NLL": 266.800556,
+      "converged": 1
+    },
+    "q0": 327.001321,
+    "p0": 0.0,
+    "Z": 8.0,
+    "mu_hat": 0.030828,
+    "mu_err": 0.002448,
+    "mu_95_obs": 0.036169,
+    "mu_95_exp": 0.003922,
+    "band_1s": [
+      0.003257,
+      0.003636
+    ],
+    "band_2s": [
+      0.003092,
+      0.003815
+    ]
+  },
+  "axial": {
+    "fit_b": {
+      "mu": 0.0,
+      "mu_err": null,
+      "theta_norm_mumu": -0.873604,
+      "theta_norm_ee": -0.589632,
+      "theta_norm_mumu_err": 0.162473,
+      "theta_norm_ee_err": 0.167543,
+      "NLL": 422.178051,
+      "converged": 1
+    },
+    "fit_sb": {
+      "mu": 0.042427,
+      "mu_err": 0.003571,
+      "theta_norm_mumu": -1.65191,
+      "theta_norm_ee": -1.353612,
+      "theta_norm_mumu_err": 0.17278,
+      "theta_norm_ee_err": 0.175177,
+      "NLL": 305.488294,
+      "converged": 1
+    },
+    "q0": 233.379514,
+    "p0": 0.0,
+    "Z": 8.0,
+    "mu_hat": 0.042427,
+    "mu_err": 0.003571,
+    "mu_95_obs": 0.049795,
+    "mu_95_exp": 0.006911,
+    "band_1s": [
+      0.005602,
+      0.006592
+    ],
+    "band_2s": [
+      0.005169,
+      0.007147
+    ]
+  },
+  "scalar": {
+    "fit_b": {
+      "mu": 0.0,
+      "mu_err": null,
+      "theta_norm_mumu": -0.163825,
+      "theta_norm_ee": -0.059389,
+      "theta_norm_mumu_err": 0.165292,
+      "theta_norm_ee_err": 0.169685,
+      "NLL": 414.175945,
+      "converged": 1
+    },
+    "fit_sb": {
+      "mu": 0.01405,
+      "mu_err": 0.001355,
+      "theta_norm_mumu": -0.333817,
+      "theta_norm_ee": -0.302893,
+      "theta_norm_mumu_err": 0.165553,
+      "theta_norm_ee_err": 0.169736,
+      "NLL": 285.766562,
+      "converged": 1
+    },
+    "q0": 256.818766,
+    "p0": 0.0,
+    "Z": 8.0,
+    "mu_hat": 0.01405,
+    "mu_err": 0.001355,
+    "mu_95_obs": 0.017743,
+    "mu_95_exp": 0.001818,
+    "band_1s": [
+      0.001564,
+      0.001627
+    ],
+    "band_2s": [
+      0.001535,
+      0.001662
+    ]
+  }
+}
