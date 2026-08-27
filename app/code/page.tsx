@@ -25,9 +25,24 @@ export default function CodePage() {
         <p className="mt-3 max-w-prose text-[15px] leading-6 text-neutral-700">
           Analysis repositories contain event selection, preprocessing, and
           statistical-inference pipelines corresponding to the research studies.
-          When an analysis repository is made public, it will be linked directly
-          from the corresponding research page.
+          Each public repository is linked from the corresponding research page.
         </p>
+        <ul className="mt-3 max-w-prose space-y-3">
+          <li>
+            <a
+              href="https://github.com/HiteshRasineni/Leptonic-Mono-z-CMS2015-DarkMatter-Search"
+              rel="noopener noreferrer"
+            >
+              Leptonic-Mono-z-CMS2015-DarkMatter-Search
+            </a>
+            <span className="block text-[14px] text-neutral-600">
+              Analysis for the{" "}
+              <em>Mono-Z Dark Matter Search with Neural Spline Flows</em> study:
+              extraction, cleaning, EDA, NSF training/scoring, and profile-likelihood
+              CLs fits in the &mu;&mu; and e<sup>+</sup>e<sup>&minus;</sup> channels.
+            </span>
+          </li>
+        </ul>
       </section>
 
       <section className="mt-8" aria-labelledby="code-models">

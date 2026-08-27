@@ -17,6 +17,7 @@ publication:
   doi: "10.48550/arXiv.2607.13771"
   preprint: "https://doi.org/10.48550/arXiv.2607.13771"
   pdf: "/research/mono-z/assets/paper.pdf"
+codeUrl: "https://github.com/HiteshRasineni/Leptonic-Mono-z-CMS2015-DarkMatter-Search"
 ---
 
 ## Overview
@@ -107,7 +108,25 @@ See also [Likelihood Is Not Probability](/notes/likelihood) for how the statisti
 
 ## Code
 
-Code availability for this study is described on the [Code overview page](/code). Direct links are added when repositories are made public.
+The full analysis pipeline for this study is public and maintained in the
+[Leptonic-Mono-z-CMS2015-DarkMatter-Search](https://github.com/HiteshRasineni/Leptonic-Mono-z-CMS2015-DarkMatter-Search)
+repository:
+
+- **DataExtraction/** — reading CMS MiniAOD ROOT files with `uproot`, resolving the
+  year-dependent EDM branch schemas, and reconstituting physics objects (leptons,
+  jets, $p_T^Z$, $\MET$).
+- **DataCleaning/** — SM cleaning and feature-bound export used for clipping at
+  training/scoring time.
+- **EDA/** — per-dataset exploratory analyses emitting PDF reports and control
+  histograms.
+- **scripts/** — Neural Spline Flow training (`nsf_fit(sr).py`, `nsf_fit(vr).py`,
+  etc.), generated training notebooks, and `nsf_scoring.ipynb`.
+- **fit\*_results/** and **Output/** — per-hypothesis CLs scans, fit-result plots,
+  and `*_audit.json` / `*_summary.json` metadata.
+
+Three DM-mediator spin/coupling hypotheses are considered (vector, axial-vector,
+scalar) in both the $\mu\mu$ and $ee$ channels. See the [Code overview page](/code)
+for how repositories are organized generally.
 
 ## Data
 
