@@ -13,6 +13,7 @@ import { getPaperSlugs } from "@/lib/paper";
 import { mdxComponents } from "@/components/MdxComponents";
 import ResearchHeader from "@/components/ResearchHeader";
 import PublicationInfo from "@/components/PublicationInfo";
+import { withBase } from "@/lib/paths";
 
 export function generateStaticParams() {
   return getAllResearch().map((r) => ({ slug: r.slug }));
@@ -85,7 +86,7 @@ export default async function ResearchPage({
               HTML
             </Link>
             <a
-              href={`/research/${slug}/assets/paper.pdf`}
+              href={withBase(`/research/${slug}/assets/paper.pdf`)}
               className="border border-neutral-300 px-3 py-1 no-underline hover:bg-neutral-100"
             >
               PDF

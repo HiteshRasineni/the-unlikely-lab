@@ -1,4 +1,5 @@
 import type { ResearchFrontmatter } from "@/lib/content";
+import { withBase } from "@/lib/paths";
 
 /**
  * Renders a research publication block. Fields are rendered only when
@@ -49,7 +50,7 @@ export function PublicationInfo({
           )}
           {publication.pdf && (
             <li>
-              <a href={publication.pdf} rel="noopener noreferrer">
+              <a href={withBase(publication.pdf)} rel="noopener noreferrer">
                 PDF
               </a>
             </li>

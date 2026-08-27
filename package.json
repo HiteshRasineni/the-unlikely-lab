@@ -7,7 +7,7 @@
     "prebuild": "node scripts/paper/build.mjs --if-possible",
     "build": "next build",
     "paper:build": "node scripts/paper/build.mjs",
-    "start": "next start"
+    "start": "npx --yes serve out"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

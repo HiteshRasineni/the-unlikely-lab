@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { prefixHtmlUrls } from "@/lib/paths";
 
 export type PaperAuthor = {
   name: string;
@@ -54,7 +55,9 @@ export function getPaper(slug: string): {
   const manifest = JSON.parse(
     fs.readFileSync(path.join(dir, "manifest.json"), "utf8")
   ) as PaperManifest;
-  const html = fs.readFileSync(path.join(dir, "article.html"), "utf8");
+  const html = prefixHtmlUrls(
+    fs.readFileSync(path.join(dir, "article.html"), "utf8")
+  );
   const asset = (f: string) =>
     fs.existsSync(path.join(process.cwd(), "public", "research", slug, "assets", f));
   return {

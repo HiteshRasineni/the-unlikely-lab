@@ -5,6 +5,7 @@ import { getAllResearch, getResearch, type ResearchFrontmatter } from "@/lib/con
 import { getPaper, getPaperSlugs } from "@/lib/paper";
 import PaperHeader from "@/components/paper/PaperHeader";
 import PaperTOC from "@/components/paper/PaperTOC";
+import { withBase } from "@/lib/paths";
 
 export function generateStaticParams() {
   return getPaperSlugs().map((slug) => ({ slug }));
@@ -51,7 +52,7 @@ export default async function PaperPage({
     }
   }
 
-  const pdfHref = `/research/${slug}/assets/paper.pdf`;
+  const pdfHref = withBase(`/research/${slug}/assets/paper.pdf`);
 
   return (
     <article lang="en" className="paper-article">

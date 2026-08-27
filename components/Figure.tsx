@@ -1,3 +1,5 @@
+import { withBase } from "@/lib/paths";
+
 type FigureProps = {
   src: string;
   alt: string;
@@ -24,7 +26,7 @@ export default function Figure({
     <figure className="my-8">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={src}
+        src={withBase(src)}
         alt={alt}
         loading="lazy"
         className="max-w-full h-auto border border-neutral-200"

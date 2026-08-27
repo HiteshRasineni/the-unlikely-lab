@@ -21,9 +21,28 @@ import * as cheerio from "cheerio";
 import { postprocess } from "./postprocess.mjs";
 
 const ROOT = process.cwd();
-const PANDOC =
-  process.env.PANDOC_PATH ??
-  path.join(ROOT, "tools", "pandoc", "pandoc-3.6.4", "pandoc.exe");
+
+function resolvePandoc() {
+  const candidates = [
+    process.env.PANDOC_PATH,
+    path.join(ROOT, "tools", "pandoc", "pandoc-3.6.4", "pandoc.exe"),
+    path.join(ROOT, "tools", "pandoc", "pandoc-3.6.4", "bin", "pandoc"),
+    "pandoc",
+  ].filter(Boolean);
+
+  for (const cmd of candidates) {
+    if (cmd !== "pandoc" && !fs.existsSync(cmd)) continue;
+    try {
+      execFileSync(cmd, ["--version"], { stdio: "ignore" });
+      return cmd;
+    } catch {
+      /* try next */
+    }
+  }
+  return null;
+}
+
+const PANDOC = resolvePandoc();
 
 const PAPERS = [
   {
@@ -570,12 +589,17 @@ ${referenceEntries
 
 // Prebuild hook check
 if (process.argv.includes("--if-possible")) {
-  if (!fs.existsSync(PANDOC)) {
+  if (!PANDOC) {
     console.log(
-      "[paper] skipping regeneration (missing pandoc); using committed artifacts in .paper-build/"
+      "[paper] skipping regeneration (pandoc not found); using existing artifacts in .paper-build/ if present"
     );
     process.exit(0);
   }
+}
+
+if (!PANDOC) {
+  console.error("[paper] pandoc is required. Install pandoc or set PANDOC_PATH.");
+  process.exit(1);
 }
 
 let allOk = true;
