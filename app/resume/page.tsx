@@ -217,6 +217,39 @@ export default function ResumePage() {
       </Section>
 
 
+      <Section title="SELECTED PROJECTS">
+        <Entry
+          title="The Unlikely Lab — Personal Research Publication Platform"
+          right="hiteshrasineni.github.io/the-unlikely-lab"
+          meta={
+            <>
+              Code:{" "}
+              <a
+                className={credClass}
+                href="https://github.com/HiteshRasineni/the-unlikely-lab"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                github.com/HiteshRasineni/the-unlikely-lab
+              </a>
+            </>
+          }
+        >
+          <li>
+            Designed and deployed a full research-publication platform that hosts complete, typeset
+            HTML versions of arXiv-style physics papers (sections, numbered equations, figures,
+            tables, bibliography) alongside an MDX-driven content system for research notes and
+            project pages.
+          </li>
+          <li>
+            Built an automated LaTeX-to-HTML paper build pipeline with Pandoc, including
+            MathML/KaTeX rendering, figure/table validation reports, and per-paper static generation;
+            the site is a statically exported Next.js (React, TypeScript, Tailwind CSS) application
+            deployed via GitHub Actions CI/CD to GitHub Pages.
+          </li>
+        </Entry>
+      </Section>
+
       <Section title="PUBLICATIONS">
         <ul className="list-disc space-y-3 pl-5 text-[14px] leading-6 text-neutral-700">
           <li>
