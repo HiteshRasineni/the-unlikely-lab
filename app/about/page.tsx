@@ -47,7 +47,14 @@ export default function AboutPage() {
         Researchers
       </h2>
       <p className="mt-4 max-w-prose text-[17px] leading-7 text-neutral-800">
-        Hitesh Rasineni
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-800"
+        >
+          Hitesh Rasineni
+        </a>
       </p>
       <p className="mt-1 max-w-prose text-[15px] leading-7 text-neutral-600">
         VIT-AP University, Amaravati, India
