@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { withBase } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title: "About",
@@ -48,7 +49,7 @@ export default function AboutPage() {
       </h2>
       <p className="mt-4 max-w-prose text-[17px] leading-7 text-neutral-800">
         <a
-          href="/resume.pdf"
+          href={withBase("/resume.pdf")}
           target="_blank"
           rel="noopener noreferrer"
           className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-800"
