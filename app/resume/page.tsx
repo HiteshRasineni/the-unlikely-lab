@@ -288,12 +288,22 @@ export default function ResumePage() {
 
       <Section title="TECHNICAL SKILLS">
         <div className="space-y-1 text-[14px] leading-6 text-neutral-700">
-          <p><span className="font-semibold text-black">Languages:</span> Python, Java, SQL, JavaScript (React)</p>
+          <p>
+            <span className="font-semibold text-black">Languages:</span> Python, Java, SQL,
+            JavaScript / TypeScript (React, Next.js)
+          </p>
           <p>
             <span className="font-semibold text-black">ML/Data:</span> PyTorch, scikit-learn, OpenCV,
             Pandas, Matplotlib, Density Estimation (Normalizing Flows, Likelihood Ratios)
           </p>
-          <p><span className="font-semibold text-black">Tools:</span> Git, Docker, Google Colab, uproot, LaTeX</p>
+          <p>
+            <span className="font-semibold text-black">Web/Platform:</span> Next.js, React,
+            TypeScript, Tailwind CSS, MDX
+          </p>
+          <p>
+            <span className="font-semibold text-black">Tools/Infra:</span> Git, GitHub Actions
+            (CI/CD), Docker, Pandoc, LaTeX, uproot, Google Colab
+          </p>
         </div>
       </Section>
 
