@@ -44,14 +44,27 @@ export default function AboutPage() {
       </ul>
 
       <h2 className="mt-10 border-b border-neutral-200 pb-1 text-xl font-semibold">
-        Researcher
+        Researchers
       </h2>
       <p className="mt-4 max-w-prose text-[17px] leading-7 text-neutral-800">
         Hitesh Rasineni
       </p>
+      <p className="mt-1 max-w-prose text-[15px] leading-7 text-neutral-600">
+        VIT-AP University, Amaravati, India
+      </p>
       <p className="mt-2 max-w-prose text-[16px] leading-7 text-neutral-700">
         Undergraduate researcher working at the intersection of machine
         learning and high-energy physics.
+      </p>
+      <p className="mt-6 max-w-prose text-[17px] leading-7 text-neutral-800">
+        Bhavishya Chebrolu
+      </p>
+      <p className="mt-1 max-w-prose text-[15px] leading-7 text-neutral-600">
+        Mohan Babu University, Tirupati, India
+      </p>
+      <p className="mt-2 max-w-prose text-[16px] leading-7 text-neutral-700">
+        Researcher working at the intersection of machine learning and
+        high-energy physics.
       </p>
 
       <h2 className="mt-10 border-b border-neutral-200 pb-1 text-xl font-semibold">

@@ -96,7 +96,7 @@ export default function HomePage() {
       <section className="py-8" aria-labelledby="home-about">
         <h2 id="home-about" className="text-xl font-semibold">About</h2>
         <p className="mt-3 max-w-prose text-[15px] leading-6 text-neutral-700">
-          The Unlikely Lab is an independent research archive maintained by Hitesh Rasineni, focused on the intersection of machine learning, density estimation, anomaly detection, and high-energy physics.
+          The Unlikely Lab is an independent research archive maintained by Hitesh Rasineni (VIT-AP University, Amaravati, India) and Bhavishya Chebrolu (Mohan Babu University, Tirupati, India), focused on the intersection of machine learning, density estimation, anomaly detection, and high-energy physics.
         </p>
         <p className="mt-3 max-w-prose text-[15px] leading-6 text-neutral-700">
           The long-term research direction is centered on reproducible, physics-aware machine learning methods for identifying unusual structure in collider data.

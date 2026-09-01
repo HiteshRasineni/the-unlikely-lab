@@ -7,7 +7,7 @@ export default function SiteFooter() {
         </p>
         <p className="mt-2">Learning the expected.</p>
         <p>Searching for the unexpected.</p>
-        <p className="mt-4 text-neutral-500">© 2026 Hitesh Rasineni</p>
+        <p className="mt-4 text-neutral-500">© 2026 Hitesh Rasineni &amp; Bhavishya Chebrolu</p>
       </div>
     </footer>
   );
