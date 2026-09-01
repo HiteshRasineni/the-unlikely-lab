@@ -15,11 +15,6 @@ const researchSummaries: Record<string, { tagline: string; description: string }
     description:
       "A likelihood-based study of mono-Z event kinematics using Neural Spline Flows and CMS Run 2015D Open Data, with separate studies of the electron and muon channels.",
   },
-  "dijet-anomaly": {
-    tagline: "CMS Open Data · Neural Spline Flows · Unsupervised Anomaly Detection",
-    description:
-      "An unsupervised density-estimation approach to identifying anomalous structure in CMS dijet events using likelihood-based scoring.",
-  },
   "z-hadronic": {
     tagline: "CMS Open Data · Hadronic Z decays",
     description:
@@ -71,7 +66,7 @@ export default function HomePage() {
                   {summary?.description ?? r.description}
                 </p>
                 <p className="mt-1.5 text-[15px]">
-                  <Link href={`/research/${r.slug}`}>Read research →</Link>
+                  <Link href={`/research/${r.slug}`}>Read research ?</Link>
                 </p>
               </article>
             );
@@ -86,7 +81,7 @@ export default function HomePage() {
         </p>
         <div className="mt-4">
           <NoteList notes={recentNotes()} />
-          <p className="mt-4 text-[15px]"><Link href="/notes">All notes →</Link></p>
+          <p className="mt-4 text-[15px]"><Link href="/notes">All notes ?</Link></p>
         </div>
       </section>
 
@@ -95,7 +90,7 @@ export default function HomePage() {
         <p className="mt-3 max-w-prose text-[15px] leading-6 text-neutral-700">
           Research code, analysis pipelines, preprocessing utilities, and reproducibility material are maintained alongside the corresponding research where possible.
         </p>
-        <p className="mt-2 text-[15px]"><Link href="/code">Overview of code organization →</Link></p>
+        <p className="mt-2 text-[15px]"><Link href="/code">Overview of code organization ?</Link></p>
       </section>
 
       <section className="py-8" aria-labelledby="home-about">
