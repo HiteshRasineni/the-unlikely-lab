@@ -48,13 +48,19 @@ export default function AboutPage() {
         Researchers
       </h2>
       <p className="mt-4 max-w-prose text-[17px] leading-7 text-neutral-800">
+        <Link
+          href="/resume"
+          className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-800"
+        >
+          Hitesh Rasineni
+        </Link>
         <a
           href={withBase("/resume.pdf")}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-800"
+          className="ml-1.5 text-[13px] text-neutral-500 underline decoration-neutral-300 underline-offset-2 hover:text-black hover:decoration-neutral-800"
         >
-          Hitesh Rasineni
+          (PDF)
         </a>
       </p>
       <p className="mt-1 max-w-prose text-[15px] leading-7 text-neutral-600">
