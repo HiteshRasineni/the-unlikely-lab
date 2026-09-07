@@ -266,10 +266,10 @@ export default function ResumePage() {
             <span className="font-semibold text-black">
               Hadronic Mono-Z Dark Matter Sensitivity with Flow Matching on CMS Open Data.
             </span>{" "}
-            H. Rasineni, B. Chebrolu. Preprint (under review), Research Square, 2026.{" "}
+            H. Rasineni, B. Chebrolu. arXiv preprint, 2026.{" "}
             <em>Hadronic decay channel.</em> DOI:{" "}
-            <a className={credClass} href="https://doi.org/10.21203/rs.3.rs-10634384/v1" target="_blank" rel="noopener noreferrer">
-              10.21203/rs.3.rs-10634384/v1
+            <a className={credClass} href="https://doi.org/10.48550/arXiv.2609.02923" target="_blank" rel="noopener noreferrer">
+              10.48550/arXiv.2609.02923
             </a>
           </li>
           <li>
