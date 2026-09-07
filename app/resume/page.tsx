@@ -168,6 +168,41 @@ export default function ResumePage() {
             deployed via GitHub Actions CI/CD to GitHub Pages.
           </li>
         </Entry>
+        <Entry
+          title="Cloud-Native ML Training Platform"
+          right="FastAPI, Docker, Next.js, PyTorch"
+          meta={
+            <>
+              Code:{" "}
+              <a
+                className={credClass}
+                href="https://github.com/HiteshRasineni/Cloud-Native-ML-Training-Platform-for-Scientific-Data"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                github.com/HiteshRasineni/Cloud-Native-ML-Training-Platform-for-Scientific-Data
+              </a>
+            </>
+          }
+        >
+          <li>
+            Built a cloud-native ML experiment-orchestration platform for HEP data with a working
+            end-to-end vertical slice: a FastAPI backend (PostgreSQL/Alembic + Redis) validates
+            specs, resolves dataset references against a registry, and enqueues jobs; the scheduler
+            runs a QUEUED → SCHEDULING → RUNNING → COMPLETED/FAILED lifecycle (with retries) via a
+            pluggable executor (Docker now, Kubernetes stubbed), launching workload containers that
+            report per-epoch metrics to MLflow + Redis; the Next.js/TypeScript frontend submits
+            experiments and renders loss curves through a backend MLflow proxy.
+          </li>
+          <li>
+            Separated storage responsibilities so PostgreSQL owns lifecycle/scheduling state, the
+            dataset registry and artifact index, MLflow (SQLite) owns params, metrics and model
+            artifacts, and MinIO owns datasets, checkpoints and logs; a pluggable worker workload
+            registry runs a from-scratch RealNVP-style normalizing flow in PyTorch (architecture
+            fully spec-driven) alongside a no-op workload, all orchestrated by a docker-compose
+            stack with pytest suites in the backend and worker.
+          </li>
+        </Entry>
       </Section>
 
       <Section title="RESEARCH EXPERIENCE">
