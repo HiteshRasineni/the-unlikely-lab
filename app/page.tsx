@@ -20,6 +20,11 @@ const researchSummaries: Record<string, { tagline: string; description: string }
     description:
       "An analysis of hadronic Z-boson decays using collider event data and machine-learning-based methods.",
   },
+  "dijet-anomaly": {
+    tagline: "CMS Open Data · Unsupervised anomaly detection",
+    description:
+      "A fully unsupervised search for anomalous dijet events in CMS Run 2011B Open Data using neural spline flow density estimation, with exhaustive validation of the low-likelihood tail.",
+  },
 };
 
 function recentNotes() {

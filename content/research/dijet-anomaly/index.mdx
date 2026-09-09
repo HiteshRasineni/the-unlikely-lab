@@ -1,0 +1,66 @@
+---
+title: "Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events"
+description: "An unsupervised search for anomalous dijet events in CMS Open Data using neural spline flow density estimation, with an exhaustive validation and robustness study of the low-likelihood tail."
+tags:
+  - CMS Open Data
+  - Dijet events
+  - Anomaly detection
+  - Neural Spline Flows
+  - Unsupervised learning
+publication:
+  title: "Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events"
+  authors:
+    - "Chebrolu Bhavishya"
+    - "Hitesh Rasineni"
+    - "Prajwal Aaryan Immadi"
+  journal: "arXiv preprint"
+  doi: "10.48550/arXiv.2609.06686"
+  preprint: "https://doi.org/10.48550/arXiv.2609.06686"
+  pdf: "/research/dijet-anomaly/assets/paper.pdf"
+---
+
+## Overview
+
+This study presents a fully unsupervised search for anomalous dijet events in $pp$ collision data from the CMS Open Data $HT$ primary dataset (Run 2011B, $\\sqrt{s} = 7~\\mathrm{TeV}$). A neural spline flow (NSF) density estimator is trained on a high-dimensional feature space of jet, dijet, and event-level observables to learn the leading Standard Model multijet background from data, without any signal hypothesis. Events produced with a low likelihood under the learned density are classified as potential anomalous events.
+
+No simulated signal samples, background labels, or new-physics scenarios are introduced at any stage of the analysis.
+
+## Physics Motivation
+
+- The analysis is model-independent: anomalies are found by probing regions of low probability density in a learned feature space rather than by testing a specific new-physics hypothesis.
+- Jet substructure observables (N-subjettiness ratios, girth, width, fragmentation fractions) and event-shape variables are sensitive to multi-prong structure and unusual energy-flow patterns, while remaining insensitive to any particular signal model.
+- A likelihood-based score provides an exact, per-event anomaly measure that can be validated with statistical and physics-level tests.
+
+## Dataset and Event Selection
+
+Events are drawn from the CMS Run 2011B $HT$ primary dataset in AOD format ($\\sqrt{s} = 7~\\mathrm{TeV}$), passing the CMS list of validated runs. After a deliberately minimal data-cleaning and validity selection — leading and subleading jet $p_T > 30~\\mathrm{GeV}$, $m_{jj} > 200~\\mathrm{GeV}$, at least two reconstructed jets, finite feature values, and no requirements targeting any specific event topology — the final dataset for training and scoring comprises 378,278 events, about a 16% reduction relative to the 452,055 events surviving the looser kinematic selection. The retained sample is dominated by Standard Model multijet production.
+
+## Density Estimation & Anomaly Scoring
+
+The central component is an NSF-based density estimator trained on the selected events. The network encodes an exact likelihood for each event under the learned distribution; low-likelihood events are treated as outlier configurations. The workflow comprises:
+
+1. Data cleaning and event validity selection
+2. Feature engineering and preprocessing (angular encoding, normalization)
+3. NSF density estimation and likelihood-based anomaly scoring
+4. Validation with mass-decorrelation tests and feature-level statistical tests
+5. Robustness checks under random-seed variation
+
+Anomalous events are selected from the extreme tail of the anomaly score distribution, at the $99.9$th percentile.
+
+## Validation & Key Results
+
+The flagged events are subjected to exhaustive validation:
+
+- **Mass decorrelation**: the anomalies do not form a narrow structure in the dijet invariant mass $m_{jj}$.
+- **Permutation null tests**: HT-conditionally permuted scores show no systematic deviation from the background distribution, confirming the feature-level deviations are not statistical artifacts.
+- **Feature-level statistics**: the selected events show notable, correlated departures from the background-only hypothesis, primarily in jet-substructure features.
+- **Training stability**: the overlap of extreme events exceeds 88% across random initializations, with rank correlations greater than 0.95, and remains above 70% under variations of the flow depth, width, training fraction, and preprocessing.
+- **Threshold stability**: the mean Kolmogorov–Smirnov separation between anomalies and background varies smoothly across the 99.5%–99.95% anomaly-score percentile thresholds, with no sharp transitions.
+
+The anomalies are distributed across the kinematic phase space and correlated across multiple observables, indicating a multivariate difference in jet substructure and event topologies rather than a narrow resonance. Although no new physics is claimed, the study demonstrates that neural-spline-flow-based techniques are sensitive to rare, structured deviations in collider data and can serve as model-independent exploratory tools for new physics at the LHC.
+
+## Publication
+
+- **Preprint**: [arXiv:2609.06686](https://doi.org/10.48550/arXiv.2609.06686) (`doi:10.48550/arXiv.2609.06686`) — arXiv
+- **Full HTML Article**: Available at [/research/dijet-anomaly/paper](/research/dijet-anomaly/paper)
+- **PDF**: [Download PDF](/research/dijet-anomaly/assets/paper.pdf)

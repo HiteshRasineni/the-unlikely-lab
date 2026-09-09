@@ -60,6 +60,10 @@ const PAPERS = [
       path.join(ROOT, "paper-source", "hadronic-mono-z"),
     ],
   },
+  {
+    slug: "dijet-anomaly",
+    candidates: [path.join(ROOT, "paper-source", "dijet-anomaly")],
+  },
 ];
 
 const log = (...a) => console.log("[paper]", ...a);
@@ -177,7 +181,7 @@ function convertPaper({ slug, candidates }) {
         const g = readGroup(tex, open);
         const cleanName = g.body
           .replace(/\\orcidlink\{[^}]*\}/g, "")
-          .replace(/\\thanks\{[^}]*\}/g, "")
+          .replace(/\\thanks\{(?:[^{}]|\{[^{}]*\})*\}/g, "")
           .replace(/\\,/g, "")
           .replace(/\\ensuremath\{([^{}]*)\}/g, "$1")
           .replace(/\$[^$]*\$/g, "")
