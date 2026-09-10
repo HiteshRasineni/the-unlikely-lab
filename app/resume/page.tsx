@@ -205,7 +205,36 @@ export default function ResumePage() {
         </Entry>
       </Section>
 
-      <Section title="RESEARCH EXPERIENCE">
+      <Section title="RESEARCH EXPERIENCE & PUBLICATIONS">
+        <Entry
+          title="Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events"
+          right="CMS Run 2011B HT Open Data"
+        >
+          <li>
+            Built a fully unsupervised, model-independent anomaly search on the CMS Run 2011B HT
+            primary dataset (√s = 7 TeV; 378,278 selected events): a neural spline flow density
+            estimator learned the SM multijet background from a high-dimensional space of
+            jet-substructure, dijet, and event-shape observables, with no signal hypothesis,
+            background labels, or simulation input at any stage.
+          </li>
+          <li>
+            Flagged events from the extreme low-likelihood tail (99.9th-percentile anomaly score)
+            and validated them exhaustively: no narrow dijet-mass structure (mass decorrelation),
+            HT-conditional permutation null tests with no systematic deviation, correlated
+            feature-level departures concentrated in jet substructure, and stable selections across
+            random seeds (&gt;88% overlap, rank correlation &gt;0.95), score thresholds
+            (99.5–99.95%), and flow hyperparameters.
+          </li>
+          <li className="text-neutral-600">
+            <span className="font-semibold text-black">Publication:</span>{" "}
+            <em>Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events.</em> B. Chebrolu,
+            H. Rasineni, P.A. Immadi (equal contribution). arXiv preprint, 2026. DOI:{" "}
+            <a className={credClass} href="https://doi.org/10.48550/arXiv.2609.06686" target="_blank" rel="noopener noreferrer">
+              10.48550/arXiv.2609.06686
+            </a>
+          </li>
+        </Entry>
+
         <Entry
           title="Leptonic Mono-Z Dark Matter Search with Neural Spline Flows"
           right="CMS Run 2015D Open Data"
@@ -233,6 +262,15 @@ export default function ResumePage() {
             Used the per-event log-likelihood ratio log p(x|DM) − log p(x|SM) as the test statistic,
             followed by a simultaneous SR+VR binned profile-likelihood fit; set 95% CL observed limits
             on the signal strength of μ &lt; 0.018 (scalar), 0.036 (vector), and 0.050 (axial-vector).
+          </li>
+          <li className="text-neutral-600">
+            <span className="font-semibold text-black">Publication:</span>{" "}
+            <em>Mono-Z Dark Matter Search with Neural Spline Flows Using CMS Run 2015D Open Data.</em>{" "}
+            H. Rasineni, B. Chebrolu. arXiv preprint, 2026 (submitted for journal publication).{" "}
+            <em>Leptonic decay channel.</em> DOI:{" "}
+            <a className={credClass} href="https://doi.org/10.48550/arXiv.2607.13771" target="_blank" rel="noopener noreferrer">
+              10.48550/arXiv.2607.13771
+            </a>
           </li>
         </Entry>
 
@@ -265,6 +303,15 @@ export default function ResumePage() {
             projected expected significances of 2.89σ, 7.62σ, and 7.41σ for three simplified-model
             benchmarks, with ablations showing extra-jet kinematics carry 53–71% of the discriminating power.
           </li>
+          <li className="text-neutral-600">
+            <span className="font-semibold text-black">Publication:</span>{" "}
+            <em>Hadronic Mono-Z Dark Matter Sensitivity with Flow Matching on CMS Open Data.</em>{" "}
+            H. Rasineni, B. Chebrolu. arXiv preprint, 2026.{" "}
+            <em>Hadronic decay channel.</em> DOI:{" "}
+            <a className={credClass} href="https://doi.org/10.48550/arXiv.2609.02923" target="_blank" rel="noopener noreferrer">
+              10.48550/arXiv.2609.02923
+            </a>
+          </li>
         </Entry>
 
 
@@ -272,54 +319,27 @@ export default function ResumePage() {
         <Entry
           title="Improving Discovery-Significance Stability in Higgs Event Classification"
           right="HiggsML H→τ⁺τ⁻ benchmark"
-          meta="with J.J. Pujari, P.A. Immadi, T. Bikku, R.S. Puppali (VIT-AP University / Amrita)."
         >
           <li>
             Developed a supervised contrastive pre-training framework combined with a parallel
             FT-Transformer + XGBoost ensemble; repeated 5×5-fold cross-validation showed reduced
             fold-to-fold variance in Approximate Median Significance (AMS = 3.74 on the full dataset)
-            versus focal-loss training, enabling more stable threshold selection. Published in{" "}
-            <em>Discover Artificial Intelligence</em> (Springer Nature).
+            versus focal-loss training, enabling more stable threshold selection (with J.J. Pujari,
+            P.A. Immadi, T. Bikku, R.S. Puppala — VIT-AP University / Amrita).
           </li>
-        </Entry>
-      </Section>
-
-
-      <Section title="PUBLICATIONS">
-        <ul className="list-disc space-y-3 pl-5 text-[14px] leading-6 text-neutral-700">
-          <li>
-            <span className="font-semibold text-black">
-              Mono-Z Dark Matter Search with Neural Spline Flows Using CMS Run 2015D Open Data.
-            </span>{" "}
-            H. Rasineni, B. Chebrolu. arXiv preprint, 2026 (submitted for journal publication).{" "}
-            <em>Leptonic decay channel.</em> DOI:{" "}
-            <a className={credClass} href="https://doi.org/10.48550/arXiv.2607.13771" target="_blank" rel="noopener noreferrer">
-              10.48550/arXiv.2607.13771
-            </a>
-          </li>
-          <li>
-            <span className="font-semibold text-black">
-              Hadronic Mono-Z Dark Matter Sensitivity with Flow Matching on CMS Open Data.
-            </span>{" "}
-            H. Rasineni, B. Chebrolu. arXiv preprint, 2026.{" "}
-            <em>Hadronic decay channel.</em> DOI:{" "}
-            <a className={credClass} href="https://doi.org/10.48550/arXiv.2609.02923" target="_blank" rel="noopener noreferrer">
-              10.48550/arXiv.2609.02923
-            </a>
-          </li>
-          <li>
-            <span className="font-semibold text-black">
-              Improving Stability of Discovery Significance in Higgs Boson Event Classification using
-              Contrastive Representation Learning.
-            </span>{" "}
-            J.J. Pujari, P.A. Immadi, H. Rasineni, T. Bikku, R.S. Puppala.{" "}
-            <em>Discover Artificial Intelligence</em> (Springer Nature), 2026. DOI:{" "}
+          <li className="text-neutral-600">
+            <span className="font-semibold text-black">Publication:</span>{" "}
+            <em>Improving Stability of Discovery Significance in Higgs Boson Event Classification
+            using Contrastive Representation Learning.</em> J.J. Pujari, P.A. Immadi, H. Rasineni,
+            T. Bikku, R.S. Puppala. <em>Discover Artificial Intelligence</em> (Springer Nature),
+            2026. DOI:{" "}
             <a className={credClass} href="https://doi.org/10.1007/s44163-026-01683-5" target="_blank" rel="noopener noreferrer">
               10.1007/s44163-026-01683-5
             </a>
           </li>
-        </ul>
+        </Entry>
       </Section>
+
 
       <Section title="TECHNICAL SKILLS">
         <div className="space-y-1 text-[14px] leading-6 text-neutral-700">
