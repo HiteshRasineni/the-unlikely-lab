@@ -209,6 +209,7 @@ export default function ResumePage() {
         <h3 className="text-[15px] font-bold tracking-wide text-black">
           Dark Matter Mono-Z (Density Estimation)
         </h3>
+        <div className="mt-2 border-l-2 border-neutral-200 pl-4">
         <Entry
           title="Leptonic Mono-Z Dark Matter Search with Neural Spline Flows"
           right="CMS Run 2015D Open Data"
@@ -270,6 +271,7 @@ export default function ResumePage() {
             7.62σ, and 7.41σ, with extra-jet kinematics carrying 53–71% of the discriminating power.
           </li>
         </Entry>
+        </div>
 
         <Entry
           title="Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events"
