@@ -205,40 +205,10 @@ export default function ResumePage() {
         </Entry>
       </Section>
 
-      <Section title="RESEARCH EXPERIENCE & PUBLICATIONS">
-        <Entry
-          title="Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events"
-          right="CMS Run 2011B HT Open Data"
-          meta={
-            <>
-              B. Chebrolu, H. Rasineni, P.A. Immadi (equal contribution). arXiv preprint, 2026.
-              DOI:{" "}
-              <a className={credClass} href="https://doi.org/10.48550/arXiv.2609.06686" target="_blank" rel="noopener noreferrer">
-                10.48550/arXiv.2609.06686
-              </a>
-              <span className="block">
-                Paper:{" "}
-                <a
-                  className={credClass}
-                  href={withBase("/research/dijet-anomaly")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  hiteshrasineni.github.io/the-unlikely-lab/research/dijet-anomaly
-                </a>
-              </span>
-            </>
-          }
-        >
-          <li>
-            Unsupervised, model-independent anomaly search on 378,278 CMS Run 2011B HT events
-            (√s = 7 TeV): a neural spline flow learned the SM multijet background from
-            jet-substructure and event-shape observables; the 99.9th-percentile low-likelihood tail
-            was validated with mass-decorrelation, permutation-null, and stability tests (&gt;88%
-            overlap across seeds, rank correlation &gt;0.95).
-          </li>
-        </Entry>
-
+      <Section title="RESEARCH EXPERIENCE">
+        <h3 className="text-[15px] font-bold tracking-wide text-black">
+          Dark Matter Mono-Z (Density Estimation)
+        </h3>
         <Entry
           title="Leptonic Mono-Z Dark Matter Search with Neural Spline Flows"
           right="CMS Run 2015D Open Data"
@@ -298,6 +268,39 @@ export default function ResumePage() {
             Built the MadGraph5_aMC@NLO → Pythia 8 → Delphes pipeline (1.44M selected events) with a
             conditional flow-matching background model; projected expected significances of 2.89σ,
             7.62σ, and 7.41σ, with extra-jet kinematics carrying 53–71% of the discriminating power.
+          </li>
+        </Entry>
+
+        <Entry
+          title="Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events"
+          right="CMS Run 2011B HT Open Data"
+          meta={
+            <>
+              B. Chebrolu, H. Rasineni, P.A. Immadi (equal contribution). arXiv preprint, 2026.
+              DOI:{" "}
+              <a className={credClass} href="https://doi.org/10.48550/arXiv.2609.06686" target="_blank" rel="noopener noreferrer">
+                10.48550/arXiv.2609.06686
+              </a>
+              <span className="block">
+                Paper:{" "}
+                <a
+                  className={credClass}
+                  href={withBase("/research/dijet-anomaly")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  hiteshrasineni.github.io/the-unlikely-lab/research/dijet-anomaly
+                </a>
+              </span>
+            </>
+          }
+        >
+          <li>
+            Unsupervised, model-independent anomaly search on 378,278 CMS Run 2011B HT events
+            (√s = 7 TeV): a neural spline flow learned the SM multijet background from
+            jet-substructure and event-shape observables; the 99.9th-percentile low-likelihood tail
+            was validated with mass-decorrelation, permutation-null, and stability tests (&gt;88%
+            overlap across seeds, rank correlation &gt;0.95).
           </li>
         </Entry>
 
