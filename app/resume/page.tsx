@@ -212,7 +212,6 @@ export default function ResumePage() {
         <div className="mt-2 border-l-2 border-neutral-200 pl-4">
         <Entry
           title="Leptonic Mono-Z Dark Matter Search with Neural Spline Flows"
-          right="CMS Run 2015D Open Data"
           meta={
             <>
               H. Rasineni, B. Chebrolu. arXiv preprint, 2026 (submitted for journal publication).{" "}
@@ -243,7 +242,6 @@ export default function ResumePage() {
 
         <Entry
           title="Hadronic Mono-Z Dark Matter Sensitivity with Flow Matching"
-          right="CMS Run 2015D HTMHT Open Data"
           meta={
             <>
               H. Rasineni, B. Chebrolu. arXiv preprint, 2026. <em>Hadronic decay channel.</em>{" "}
@@ -275,7 +273,6 @@ export default function ResumePage() {
 
         <Entry
           title="Likelihood-Based Unsupervised Anomaly Detection in CMS Dijet Events"
-          right="CMS Run 2011B HT Open Data"
           meta={
             <>
               B. Chebrolu, H. Rasineni, P.A. Immadi (equal contribution). arXiv preprint, 2026.
@@ -310,7 +307,6 @@ export default function ResumePage() {
 
         <Entry
           title="Improving Discovery-Significance Stability in Higgs Event Classification"
-          right="HiggsML H→τ⁺τ⁻ benchmark"
           meta={
             <>
               J.J. Pujari, P.A. Immadi, H. Rasineni, T. Bikku, R.S. Puppala.{" "}
