@@ -71,7 +71,20 @@ export default function AboutPage() {
         learning and high-energy physics.
       </p>
       <p className="mt-6 max-w-prose text-[17px] leading-7 text-neutral-800">
-        Bhavishya Chebrolu
+        <Link
+          href="/resume/bhavishya"
+          className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-800"
+        >
+          Bhavishya Chebrolu
+        </Link>
+        <a
+          href={withBase("/resume-bhavishya.pdf")}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-1.5 text-[13px] text-neutral-500 underline decoration-neutral-300 underline-offset-2 hover:text-black hover:decoration-neutral-800"
+        >
+          (PDF)
+        </a>
       </p>
       <p className="mt-1 max-w-prose text-[15px] leading-7 text-neutral-600">
         Mohan Babu University, Tirupati, India

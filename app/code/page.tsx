@@ -29,18 +29,42 @@ export default function CodePage() {
         </p>
         <ul className="mt-3 max-w-prose space-y-3">
           <li>
-            <a
-              href="https://github.com/HiteshRasineni/Leptonic-Mono-z-CMS2015-DarkMatter-Search"
-              rel="noopener noreferrer"
-            >
-              Leptonic-Mono-z-CMS2015-DarkMatter-Search
-            </a>
+            <span className="font-medium">Mono-Z Analysis</span>
             <span className="block text-[14px] text-neutral-600">
-              Analysis for the{" "}
-              <em>Mono-Z Dark Matter Search with Neural Spline Flows</em> study:
-              extraction, cleaning, EDA, NSF training/scoring, and profile-likelihood
-              CLs fits in the &mu;&mu; and e<sup>+</sup>e<sup>&minus;</sup> channels.
+              Analysis code for both mono-Z papers — the leptonic-channel study{" "}
+              <em>Mono-Z Dark Matter Search with Neural Spline Flows</em> and the
+              hadronic-channel study{" "}
+              <em>Hadronic Mono-Z Dark Matter Sensitivity with Flow Matching</em> —
+              maintained as two channel-specific repositories:
             </span>
+            <ul className="mt-2 space-y-1.5 text-[14px]">
+              <li>
+                <a
+                  href="https://github.com/HiteshRasineni/Leptonic-Mono-z-CMS2015-DarkMatter-Search"
+                  rel="noopener noreferrer"
+                >
+                  Leptonic-Mono-z-CMS2015-DarkMatter-Search
+                </a>
+                <span className="block text-neutral-600">
+                  Leptonic channels (&mu;&mu; and e<sup>+</sup>e<sup>&minus;</sup>):
+                  extraction, cleaning, EDA, Neural Spline Flow training/scoring,
+                  and profile-likelihood CLs fits.
+                </span>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/HiteshRasineni/CMS2015DarkMatterSearch-HTMHT-"
+                  rel="noopener noreferrer"
+                >
+                  CMS2015DarkMatterSearch-HTMHT-
+                </a>
+                <span className="block text-neutral-600">
+                  Hadronic channel (Z &rarr; jj, CMS Run 2015D HTMHT sample):
+                  event selection, flow-matching background model, and projected
+                  CLs sensitivity for vector and axial-vector mediators.
+                </span>
+              </li>
+            </ul>
           </li>
         </ul>
       </section>
